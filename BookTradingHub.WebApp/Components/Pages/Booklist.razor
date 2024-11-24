@@ -1,0 +1,55 @@
+@page "/booklist"
+@inject IHttpClientFactory HttpClientFactory
+@using BookTradingHub.WebAPI.Models
+
+<h3>Books List</h3>
+
+@if (books == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN</th>
+                <th>Genre</th>
+                <th>Publisher</th>
+                <th>Publish Date</th>
+                <th>Condition</th>
+                <th>Availability</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in books)
+            {
+                <tr>
+                    <td>@book.Title</td>
+                    <td>@book.Author</td>
+                    <td>@book.ISBN</td>
+                    <td>@book.Genre</td>
+                    <td>@book.Publisher</td>
+                    <td>@book.PublishDate.ToShortDateString()</td>
+                    <td>@book.Condition</td>
+                    <td>@(book.IsAvailable ? "Available" : "Not Available")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Book> books;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Create an HttpClient instance using IHttpClientFactory
+        var client = HttpClientFactory.CreateClient("WebAPI");
+
+        // Get books from the API
+        books = await client.GetFromJsonAsync<List<Book>>("api/books");
+    }
+}
