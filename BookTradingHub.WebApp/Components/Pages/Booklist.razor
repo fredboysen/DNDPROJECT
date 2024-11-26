@@ -20,21 +20,19 @@ else
                 <th>Publisher</th>
                 <th>Publish Date</th>
                 <th>Condition</th>
-                <th>Availability</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var book in books)
             {
                 <tr>
-                    <td>@book.Title</td>
-                    <td>@book.Author</td>
-                    <td>@book.ISBN</td>
-                    <td>@book.Genre</td>
-                    <td>@book.Publisher</td>
-                    <td>@book.PublishDate.ToShortDateString()</td>
-                    <td>@book.Condition</td>
-                    <td>@(book.IsAvailable ? "Available" : "Not Available")</td>
+                    <td>@book.title</td> <!-- Corrected to use 'title' from Book.cs -->
+                    <td>@book.author</td> <!-- Corrected to use 'author' from Book.cs -->
+                    <td>@book.isbn</td> <!-- Corrected to use 'isbn' from Book.cs -->
+                    <td>@book.genre</td> <!-- Corrected to use 'genre' from Book.cs -->
+                    <td>@book.publisher</td> <!-- Corrected to use 'publisher' from Book.cs -->
+                    <td>@book.publish_date.ToShortDateString()</td> <!-- Corrected to use 'publish_date' from Book.cs -->
+                    <td>@book.condition</td> <!-- Corrected to use 'condition' from Book.cs -->
                 </tr>
             }
         </tbody>

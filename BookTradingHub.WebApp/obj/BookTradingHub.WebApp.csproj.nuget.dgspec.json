@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj": {}
+    "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj": {
+    "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj",
         "projectName": "BookTradingHub.WebAPI",
-        "projectPath": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj",
-        "packagesPath": "C:\\Users\\jonas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\DNDPROJECT\\BookTradingHub.WebAPI\\obj\\",
+        "projectPath": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj",
+        "packagesPath": "C:\\Users\\frebo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jonas\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\frebo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -63,6 +63,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[7.1.0, )"
             }
           },
           "imports": [
@@ -88,17 +96,17 @@
         }
       }
     },
-    "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj": {
+    "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj",
+        "projectUniqueName": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj",
         "projectName": "BookTradingHub.WebApp",
-        "projectPath": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj",
-        "packagesPath": "C:\\Users\\jonas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\DNDPROJECT\\BookTradingHub.WebApp\\obj\\",
+        "projectPath": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj",
+        "packagesPath": "C:\\Users\\frebo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jonas\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\frebo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -110,8 +118,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj": {
-                "projectPath": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj"
+              "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj": {
+                "projectPath": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj"
               }
             }
           }

@@ -1,15 +1,17 @@
+using System.ComponentModel.DataAnnotations;
 namespace BookTradingHub.WebAPI.Models
+
 {
     public class Book
     {
-        public int BookId { get; set; } // Matches the database field "book_id"
-        public string Title { get; set; }
-        public string Author { get; set; }
-        public string ISBN { get; set; }
-        public string Genre { get; set; } // Add this if missing
-        public string Publisher { get; set; }
-        public DateTime PublishDate { get; set; }
-        public string Condition { get; set; } // Add this if missing
-        public bool IsAvailable { get; set; } // Example: indicates if a book is available for exchange
+        [Key]        public int Book_Id { get; set; } // Matches the database field "book_id"
+        public string title { get; set; } = "";
+        public string author { get; set; }= "";
+        public string isbn { get; set; }= "";
+        public string genre { get; set; } = "";
+        public string publisher { get; set; } = "";
+        public DateTime publish_date { get; set; }
+        public string condition { get; set; } = "";
+       
     }
 }

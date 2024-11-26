@@ -62,8 +62,6 @@ C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\r0xh
 C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\c7er13btv3-h1s4sie4z3.gz
 C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\n3f7ea9qce-63fj8s7r0e.gz
 C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\u20lkif674-0j3bgjxly4.gz
-C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\w8f4a5lrzq-kgosg0ypdy.gz
-C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\givpizgkwc-kgosg0ypdy.gz
 C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\staticwebassets.build.endpoints.json
@@ -258,3 +256,8 @@ C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\DNDPROJECT\BookTr
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\ref\BookTradingHub.WebApp.dll
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\w8f4a5lrzq-trovcmvv66.gz
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\givpizgkwc-trovcmvv66.gz
+C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\w8f4a5lrzq-trovcmvv66.gz
+C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\givpizgkwc-trovcmvv66.gz
+C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
