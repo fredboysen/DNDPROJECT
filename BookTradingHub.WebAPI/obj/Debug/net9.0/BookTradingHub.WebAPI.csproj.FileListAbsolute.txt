@@ -311,3 +311,5 @@ C:\Users\frebo\DNDPROJECT\BookTradingHub.WebAPI\obj\Debug\net9.0\refint\BookTrad
 C:\Users\frebo\DNDPROJECT\BookTradingHub.WebAPI\obj\Debug\net9.0\BookTradingHub.WebAPI.pdb
 C:\Users\frebo\DNDPROJECT\BookTradingHub.WebAPI\obj\Debug\net9.0\BookTradingHub.WebAPI.genruntimeconfig.cache
 C:\Users\frebo\DNDPROJECT\BookTradingHub.WebAPI\obj\Debug\net9.0\ref\BookTradingHub.WebAPI.dll
+C:\Users\frebo\DNDPROJECT\BookTradingHub.WebAPI\bin\Debug\net9.0\BCrypt.Net-Next.dll
+C:\Users\frebo\DNDPROJECT\BookTradingHub.WebAPI\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
