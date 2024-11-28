@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 using BookTradingHub.Database.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models; 
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +29,24 @@ builder.Services.AddDbContext<ApplicationDB>(options =>
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = "BookTradingHub",
+            ValidAudience = "BookTradingHub",
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("YourSuperSecretKey"))
+        };
+    });
+
+builder.Services.AddAuthorization();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -46,6 +67,9 @@ app.MapControllers();  // Map API controllers to routes
 
 // Optional: Add support for antiforgery if needed
 app.UseAntiforgery();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 // Optional: Add static file support if needed (if you have static content like images or files)
 app.MapStaticAssets();

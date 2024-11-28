@@ -311,6 +311,7 @@ C:\Users\frebo\DNDPROJECT\BookTradingHub.WebAPI\obj\Debug\net9.0\refint\BookTrad
 C:\Users\frebo\DNDPROJECT\BookTradingHub.WebAPI\obj\Debug\net9.0\BookTradingHub.WebAPI.pdb
 C:\Users\frebo\DNDPROJECT\BookTradingHub.WebAPI\obj\Debug\net9.0\BookTradingHub.WebAPI.genruntimeconfig.cache
 C:\Users\frebo\DNDPROJECT\BookTradingHub.WebAPI\obj\Debug\net9.0\ref\BookTradingHub.WebAPI.dll
+<<<<<<< HEAD
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebAPI\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebAPI\bin\Debug\net9.0\appsettings.json
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebAPI\bin\Debug\net9.0\BookTradingHub.WebAPI.staticwebassets.endpoints.json
@@ -469,3 +470,7 @@ C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJEC
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebAPI\obj\Debug\net9.0\BookTradingHub.WebAPI.pdb
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebAPI\obj\Debug\net9.0\BookTradingHub.WebAPI.genruntimeconfig.cache
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebAPI\obj\Debug\net9.0\ref\BookTradingHub.WebAPI.dll
+=======
+C:\Users\frebo\DNDPROJECT\BookTradingHub.WebAPI\bin\Debug\net9.0\BCrypt.Net-Next.dll
+C:\Users\frebo\DNDPROJECT\BookTradingHub.WebAPI\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+>>>>>>> b8dac5d7556c2b8a95e2bf9a41b7b086d803fd61
