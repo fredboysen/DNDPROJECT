@@ -1,14 +1,13 @@
 /* _content/BookTradingHub.WebApp/Components/Layout/MainLayout.razor.rz.scp.css */
 .page[b-r3fbocw5im] {
+    position: relative;
     display: flex;
     flex-direction: column;
-    
-    
 }
 
 main[b-r3fbocw5im] {
     flex: 1;
-    padding: 1rem; /* Optional: Add padding to main content */
+    padding: 1rem;
 }
 
 .top-nav[b-r3fbocw5im] {
@@ -22,10 +21,9 @@ main[b-r3fbocw5im] {
     width: 100%;
     z-index: 1000;
     padding: 0 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better distinction */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Ensure Blazor error UI is visible and positioned correctly */
 #blazor-error-ui[b-r3fbocw5im] {
     color-scheme: light only;
     background: lightyellow;
@@ -37,7 +35,7 @@ main[b-r3fbocw5im] {
     padding: 0.6rem 1.25rem 0.7rem 1.25rem;
     position: fixed;
     width: 100%;
-    z-index: 1001; /* Ensure it is above the top-nav */
+    z-index: 1001; 
 }
 
 #blazor-error-ui .dismiss[b-r3fbocw5im] {
@@ -46,6 +44,20 @@ main[b-r3fbocw5im] {
     right: 0.75rem;
     top: 0.5rem;
 }
+
+@media (min-width: 641px) {
+    .page[b-r3fbocw5im] {
+        flex-direction: column;
+    }
+
+    .top-nav[b-r3fbocw5im] {
+        width: 100%;
+        height: 5rem;
+        position: sticky;
+        top: 0;
+    }
+}
+
 /* _content/BookTradingHub.WebApp/Components/Layout/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-0c9fanig9z] {
     appearance: none;

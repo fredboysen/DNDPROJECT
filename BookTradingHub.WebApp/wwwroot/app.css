@@ -1,3 +1,5 @@
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* MAIN CONTENT CSS */
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -57,4 +59,74 @@ h1:focus {
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
     text-align: start;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* HOME PAGE BOOK CSS */
+.books-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.book-card {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+.book-image {
+    width: 180px; 
+    height: auto; /* Maintain aspect ratio - IMPORTANT*/
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid rgb(92, 92, 92);
+}
+
+.book-details {
+    flex-grow: 1; /* Take remaining space */
+    display: flex;
+    flex-direction: column; /* Stack title and price vertically */
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.book-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.book-price {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0 0;
+}
+
+.book-description {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #777;
+    margin-top: auto; /* Push description to the bottom */
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* NEW LISTING PAGE CSS */
+#description-container {
+    height: 300px;
+    width: 800px;
+}
+
+.form-group{
+    width: 800px;
+}
+
+.btn-primary{
+    margin-top: 20px;
 }
