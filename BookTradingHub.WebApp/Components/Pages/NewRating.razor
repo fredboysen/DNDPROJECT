@@ -7,9 +7,9 @@
     <input type="text" id="bookName" class="form-control" @bind="BookName" placeholder="Enter book name" />
 </div>
 
-<div class="form-group">
-    <label for="starRating">Star Rating (out of 5)</label>
-    <input type="number" id="starRating" class="form-control" @bind="StarRating" min="1" max="5" />
+<div class="form-group star-container">
+    <label for="starRating">Rating</label>
+    <input type="range" id="starRating" class="form-control" @bind="StarRating" min="1" max="10" />
 </div>
 
 <div class="form-group">
@@ -26,14 +26,14 @@
 
 @code {
     private string BookName { get; set; }
-    private int StarRating { get; set; }
+    private int StarRating { get; set; } = 1;
     private string Description { get; set; }
     private string Message { get; set; }
 
     private void AddRating()
     {
         // Placeholder logic to handle adding a rating
-        if (StarRating < 1 || StarRating > 5 || string.IsNullOrWhiteSpace(BookName))
+        if (StarRating < 1 || StarRating > 10 || string.IsNullOrWhiteSpace(BookName))
         {
             Message = "Please provide valid inputs!";
             return;
@@ -43,3 +43,5 @@
         // In the future, save this data to the database
     }
 }
+
+

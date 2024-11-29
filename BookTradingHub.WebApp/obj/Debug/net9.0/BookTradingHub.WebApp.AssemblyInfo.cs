@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BookTradingHub.WebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+987e2506f47479a8df6cf8feccb2e5eba1f589b6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+473d3da759ee99eed4c497a058cdcfc3b42675a1")]
 [assembly: System.Reflection.AssemblyProductAttribute("BookTradingHub.WebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BookTradingHub.WebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

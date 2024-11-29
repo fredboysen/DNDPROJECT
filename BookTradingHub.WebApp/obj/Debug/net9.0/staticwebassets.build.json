@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hg8iWxSwF88WbbsMm3r8i0PKOrw26jLyCzpX7gBUC/Q=",
+  "Hash": "ti9wxu7mCR2/Qj4X2fZRjAj4hoWNiqM/CgHSZ7o28IE=",
   "Source": "BookTradingHub.WebApp",
   "BasePath": "_content/BookTradingHub.WebApp",
   "Mode": "Default",
@@ -617,12 +617,12 @@
       "OriginalItemSpec": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\PROJECT\\DNDPROJECT\\BookTradingHub.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\PROJECT\\DNDPROJECT\\BookTradingHub.WebApp\\obj\\Debug\\net9.0\\compressed\\mnoe22e8td-idpcq3wihl.gz",
+      "Identity": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\PROJECT\\DNDPROJECT\\BookTradingHub.WebApp\\obj\\Debug\\net9.0\\compressed\\mnoe22e8td-1e2er87hbu.gz",
       "SourceId": "BookTradingHub.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\PROJECT\\DNDPROJECT\\BookTradingHub.WebApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/BookTradingHub.WebApp",
-      "RelativePath": "app#[.{fingerprint=idpcq3wihl}]?.css.gz",
+      "RelativePath": "app#[.{fingerprint=1e2er87hbu}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -631,8 +631,8 @@
       "RelatedAsset": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\PROJECT\\DNDPROJECT\\BookTradingHub.WebApp\\wwwroot\\app.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "a4pvy63yoa",
-      "Integrity": "6nrv6sz6vmAWDUzk4vqOo6w8ZKKJI2UwIJ1Z82YLqnE=",
+      "Fingerprint": "o28ri535i4",
+      "Integrity": "YKgjCUzMnC+807r++kKpfXV5fR0ngCMWznhNrOlbFhk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\PROJECT\\DNDPROJECT\\BookTradingHub.WebApp\\wwwroot\\app.css"
@@ -1072,8 +1072,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "idpcq3wihl",
-      "Integrity": "dtGaP8K1QWwSlcJjH6z2vVkfftJV+ic3NzmtvD2fpys=",
+      "Fingerprint": "1e2er87hbu",
+      "Integrity": "ZzG+fnEH1v6oCI5QWmerXa58g2dHQuPk+Qa9aNscCOM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\app.css"
@@ -2131,13 +2131,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "app.css",
-      "AssetFile": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\PROJECT\\DNDPROJECT\\BookTradingHub.WebApp\\obj\\Debug\\net9.0\\compressed\\mnoe22e8td-idpcq3wihl.gz",
+      "Route": "app.1e2er87hbu.css",
+      "AssetFile": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\PROJECT\\DNDPROJECT\\BookTradingHub.WebApp\\obj\\Debug\\net9.0\\compressed\\mnoe22e8td-1e2er87hbu.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000489476260"
+          "Quality": "0.000427715997"
         }
       ],
       "ResponseHeaders": [
@@ -2147,19 +2147,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2042"
+          "Value": "2337"
         },
         {
           "Name": "ETag",
-          "Value": "\"6nrv6sz6vmAWDUzk4vqOo6w8ZKKJI2UwIJ1Z82YLqnE=\""
+          "Value": "\"YKgjCUzMnC+807r++kKpfXV5fR0ngCMWznhNrOlbFhk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 18:02:02 GMT"
+          "Value": "Fri, 29 Nov 2024 14:08:04 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -2175,18 +2175,26 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"dtGaP8K1QWwSlcJjH6z2vVkfftJV+ic3NzmtvD2fpys=\""
+          "Value": "W/\"ZzG+fnEH1v6oCI5QWmerXa58g2dHQuPk+Qa9aNscCOM=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "1e2er87hbu"
+        },
+        {
+          "Name": "label",
+          "Value": "app.css"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-dtGaP8K1QWwSlcJjH6z2vVkfftJV+ic3NzmtvD2fpys="
+          "Value": "sha256-ZzG+fnEH1v6oCI5QWmerXa58g2dHQuPk+Qa9aNscCOM="
         }
       ]
     },
     {
-      "Route": "app.css",
+      "Route": "app.1e2er87hbu.css",
       "AssetFile": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\PROJECT\\DNDPROJECT\\BookTradingHub.WebApp\\wwwroot\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2196,7 +2204,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4027"
+          "Value": "5319"
         },
         {
           "Name": "Content-Type",
@@ -2204,121 +2212,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"dtGaP8K1QWwSlcJjH6z2vVkfftJV+ic3NzmtvD2fpys=\""
+          "Value": "\"ZzG+fnEH1v6oCI5QWmerXa58g2dHQuPk+Qa9aNscCOM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 18:02:02 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-dtGaP8K1QWwSlcJjH6z2vVkfftJV+ic3NzmtvD2fpys="
-        }
-      ]
-    },
-    {
-      "Route": "app.css.gz",
-      "AssetFile": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\PROJECT\\DNDPROJECT\\BookTradingHub.WebApp\\obj\\Debug\\net9.0\\compressed\\mnoe22e8td-idpcq3wihl.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2042"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"6nrv6sz6vmAWDUzk4vqOo6w8ZKKJI2UwIJ1Z82YLqnE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 18:02:02 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-6nrv6sz6vmAWDUzk4vqOo6w8ZKKJI2UwIJ1Z82YLqnE="
-        }
-      ]
-    },
-    {
-      "Route": "app.idpcq3wihl.css",
-      "AssetFile": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\PROJECT\\DNDPROJECT\\BookTradingHub.WebApp\\obj\\Debug\\net9.0\\compressed\\mnoe22e8td-idpcq3wihl.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000489476260"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2042"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"6nrv6sz6vmAWDUzk4vqOo6w8ZKKJI2UwIJ1Z82YLqnE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 18:02:02 GMT"
+          "Value": "Fri, 29 Nov 2024 14:08:04 GMT"
         },
         {
           "Name": "Cache-Control",
           "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"dtGaP8K1QWwSlcJjH6z2vVkfftJV+ic3NzmtvD2fpys=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "idpcq3wihl"
+          "Value": "1e2er87hbu"
         },
         {
           "Name": "label",
@@ -2326,13 +2234,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-dtGaP8K1QWwSlcJjH6z2vVkfftJV+ic3NzmtvD2fpys="
+          "Value": "sha256-ZzG+fnEH1v6oCI5QWmerXa58g2dHQuPk+Qa9aNscCOM="
         }
       ]
     },
     {
-      "Route": "app.idpcq3wihl.css",
-      "AssetFile": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\PROJECT\\DNDPROJECT\\BookTradingHub.WebApp\\wwwroot\\app.css",
+      "Route": "app.1e2er87hbu.css.gz",
+      "AssetFile": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\PROJECT\\DNDPROJECT\\BookTradingHub.WebApp\\obj\\Debug\\net9.0\\compressed\\mnoe22e8td-1e2er87hbu.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2341,7 +2249,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4027"
+          "Value": "2337"
         },
         {
           "Name": "Content-Type",
@@ -2349,56 +2257,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"dtGaP8K1QWwSlcJjH6z2vVkfftJV+ic3NzmtvD2fpys=\""
+          "Value": "\"YKgjCUzMnC+807r++kKpfXV5fR0ngCMWznhNrOlbFhk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 18:02:02 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "idpcq3wihl"
-        },
-        {
-          "Name": "label",
-          "Value": "app.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-dtGaP8K1QWwSlcJjH6z2vVkfftJV+ic3NzmtvD2fpys="
-        }
-      ]
-    },
-    {
-      "Route": "app.idpcq3wihl.css.gz",
-      "AssetFile": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\PROJECT\\DNDPROJECT\\BookTradingHub.WebApp\\obj\\Debug\\net9.0\\compressed\\mnoe22e8td-idpcq3wihl.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2042"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"6nrv6sz6vmAWDUzk4vqOo6w8ZKKJI2UwIJ1Z82YLqnE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 18:02:02 GMT"
+          "Value": "Fri, 29 Nov 2024 14:08:04 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2416,7 +2279,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "idpcq3wihl"
+          "Value": "1e2er87hbu"
         },
         {
           "Name": "label",
@@ -2424,7 +2287,144 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-6nrv6sz6vmAWDUzk4vqOo6w8ZKKJI2UwIJ1Z82YLqnE="
+          "Value": "sha256-YKgjCUzMnC+807r++kKpfXV5fR0ngCMWznhNrOlbFhk="
+        }
+      ]
+    },
+    {
+      "Route": "app.css",
+      "AssetFile": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\PROJECT\\DNDPROJECT\\BookTradingHub.WebApp\\obj\\Debug\\net9.0\\compressed\\mnoe22e8td-1e2er87hbu.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000427715997"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2337"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YKgjCUzMnC+807r++kKpfXV5fR0ngCMWznhNrOlbFhk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 14:08:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"ZzG+fnEH1v6oCI5QWmerXa58g2dHQuPk+Qa9aNscCOM=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZzG+fnEH1v6oCI5QWmerXa58g2dHQuPk+Qa9aNscCOM="
+        }
+      ]
+    },
+    {
+      "Route": "app.css",
+      "AssetFile": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\PROJECT\\DNDPROJECT\\BookTradingHub.WebApp\\wwwroot\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5319"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZzG+fnEH1v6oCI5QWmerXa58g2dHQuPk+Qa9aNscCOM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 14:08:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZzG+fnEH1v6oCI5QWmerXa58g2dHQuPk+Qa9aNscCOM="
+        }
+      ]
+    },
+    {
+      "Route": "app.css.gz",
+      "AssetFile": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\PROJECT\\DNDPROJECT\\BookTradingHub.WebApp\\obj\\Debug\\net9.0\\compressed\\mnoe22e8td-1e2er87hbu.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2337"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YKgjCUzMnC+807r++kKpfXV5fR0ngCMWznhNrOlbFhk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 14:08:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YKgjCUzMnC+807r++kKpfXV5fR0ngCMWznhNrOlbFhk="
         }
       ]
     },
@@ -2863,7 +2863,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 18:20:55 GMT"
+          "Value": "Fri, 29 Nov 2024 12:58:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2916,7 +2916,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 18:20:55 GMT"
+          "Value": "Fri, 29 Nov 2024 12:58:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2953,7 +2953,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 18:20:55 GMT"
+          "Value": "Fri, 29 Nov 2024 12:58:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3000,7 +3000,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 18:20:55 GMT"
+          "Value": "Fri, 29 Nov 2024 12:58:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3053,7 +3053,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 18:20:55 GMT"
+          "Value": "Fri, 29 Nov 2024 12:58:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3090,7 +3090,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 18:20:55 GMT"
+          "Value": "Fri, 29 Nov 2024 12:58:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3137,7 +3137,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 18:20:55 GMT"
+          "Value": "Fri, 29 Nov 2024 12:58:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3198,7 +3198,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 18:20:55 GMT"
+          "Value": "Fri, 29 Nov 2024 12:58:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3243,7 +3243,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 18:20:55 GMT"
+          "Value": "Fri, 29 Nov 2024 12:58:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3298,7 +3298,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 18:20:55 GMT"
+          "Value": "Fri, 29 Nov 2024 12:58:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3359,7 +3359,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 18:20:55 GMT"
+          "Value": "Fri, 29 Nov 2024 12:58:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3404,7 +3404,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 18:20:55 GMT"
+          "Value": "Fri, 29 Nov 2024 12:58:16 GMT"
         },
         {
           "Name": "Cache-Control",
