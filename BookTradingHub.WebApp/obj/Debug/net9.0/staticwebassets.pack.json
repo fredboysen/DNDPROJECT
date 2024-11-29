@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\Documents\\DNDproject\\DNDPROJECT\\BookTradingHub.WebApp\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\BookTradingHub.WebApp.bundle.scp.css",
-      "PackagePath": "staticwebassets\\BookTradingHub.WebApp.trovcmvv66.bundle.scp.css"
+      "PackagePath": "staticwebassets\\BookTradingHub.WebApp.wgegnnykmf.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\Documents\\DNDproject\\DNDPROJECT\\BookTradingHub.WebApp\\wwwroot\\Account.js",
@@ -19,6 +19,22 @@
     {
       "Id": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\Documents\\DNDproject\\DNDPROJECT\\BookTradingHub.WebApp\\wwwroot\\book-trading-hub-high-resolution-logo-transparent.png",
       "PackagePath": "staticwebassets\\book-trading-hub-high-resolution-logo-transparent.png"
+    },
+    {
+      "Id": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\Documents\\DNDproject\\DNDPROJECT\\BookTradingHub.WebApp\\wwwroot\\book1.jpg",
+      "PackagePath": "staticwebassets\\book1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\Documents\\DNDproject\\DNDPROJECT\\BookTradingHub.WebApp\\wwwroot\\book2.jpg",
+      "PackagePath": "staticwebassets\\book2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\Documents\\DNDproject\\DNDPROJECT\\BookTradingHub.WebApp\\wwwroot\\book3.jpg",
+      "PackagePath": "staticwebassets\\book3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\Documents\\DNDproject\\DNDPROJECT\\BookTradingHub.WebApp\\wwwroot\\book4.jpg",
+      "PackagePath": "staticwebassets\\book4.jpg"
     },
     {
       "Id": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\Documents\\DNDproject\\DNDPROJECT\\BookTradingHub.WebApp\\wwwroot\\favicon.png",

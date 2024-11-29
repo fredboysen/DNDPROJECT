@@ -1,0 +1,45 @@
+@page "/newrating"
+
+<h3>Add New Rating</h3>
+
+<div class="form-group">
+    <label for="bookName">Book Name</label>
+    <input type="text" id="bookName" class="form-control" @bind="BookName" placeholder="Enter book name" />
+</div>
+
+<div class="form-group">
+    <label for="starRating">Star Rating (out of 5)</label>
+    <input type="number" id="starRating" class="form-control" @bind="StarRating" min="1" max="5" />
+</div>
+
+<div class="form-group">
+    <label for="description">Description</label>
+    <textarea id="description-container" class="form-control" @bind="Description" placeholder="Write your review"></textarea>
+</div>
+
+<button class="btn btn-primary" @onclick="AddRating">Add</button>
+
+@if (!string.IsNullOrEmpty(Message))
+{
+    <p class="text-success">@Message</p>
+}
+
+@code {
+    private string BookName { get; set; }
+    private int StarRating { get; set; }
+    private string Description { get; set; }
+    private string Message { get; set; }
+
+    private void AddRating()
+    {
+        // Placeholder logic to handle adding a rating
+        if (StarRating < 1 || StarRating > 5 || string.IsNullOrWhiteSpace(BookName))
+        {
+            Message = "Please provide valid inputs!";
+            return;
+        }
+
+        Message = $"Successfully added a rating for {BookName}!";
+        // In the future, save this data to the database
+    }
+}

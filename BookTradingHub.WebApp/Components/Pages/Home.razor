@@ -5,3 +5,35 @@
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
+<div class="books-container">
+    @foreach (var book in Books)
+    {
+        <div class="book-card">
+            <img src="@book.ImageUrl" alt="@book.Title" class="book-image" />
+            <div class="book-details">
+                <h3 class="book-title">@book.Title</h3>
+                <p class="book-price">@book.Price</p>
+                <p class="book-description">@book.Description</p>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    public List<Book> Books { get; set; } = new List<Book>
+    {
+        new Book { Title = "Book 1", Price = "$10", Description = "A great book about adventure.", ImageUrl = "book1.jpg" },
+        new Book { Title = "Book 2", Price = "$12", Description = "An amazing journey into the unknown.", ImageUrl = "book2.jpg" },
+        new Book { Title = "Book 3", Price = "$15", Description = "A thrilling mystery novel.", ImageUrl = "book3.jpg" },
+        new Book { Title = "Book 4", Price = "$8", Description = "An inspiring story of perseverance.", ImageUrl = "book4.jpg" }
+    };
+
+    public class Book
+    {
+        public string Title { get; set; }
+        public string Price { get; set; }
+        public string Description { get; set; }
+        public string ImageUrl { get; set; }
+    }
+}
+

@@ -24,17 +24,17 @@ namespace BookTradingHub.WebAPI.Migrations
 
             modelBuilder.Entity("BookTradingHub.WebAPI.Models.Book", b =>
                 {
-                    b.Property<int>("Book_Id")
+                    b.Property<int>("BookId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Book_Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BookId"));
 
                     b.Property<string>("author")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("condition")
+                    b.Property<string>("Condition")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -46,7 +46,10 @@ namespace BookTradingHub.WebAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("publish_date")
+                    b.Property<bool>("IsAvailable")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("PublishDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("publisher")
@@ -57,9 +60,87 @@ namespace BookTradingHub.WebAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Book_Id");
+                    b.HasKey("BookId");
 
                     b.ToTable("Books");
+                });
+
+            modelBuilder.Entity("BookTradingHub.WebAPI.Models.Rating", b =>
+                {
+                    b.Property<int>("rating_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("rating_id"));
+
+                    b.Property<int>("book_id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("review")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("stars")
+                        .HasColumnType("int");
+
+                    b.Property<int>("user_Id")
+                        .HasColumnType("int");
+
+                    b.HasKey("rating_id");
+
+                    b.HasIndex("book_id");
+
+                    b.HasIndex("user_Id");
+
+                    b.ToTable("Ratings");
+                });
+
+            modelBuilder.Entity("BookTradingHub.WebAPI.Models.User", b =>
+                {
+                    b.Property<int>("user_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("user_id"));
+
+                    b.Property<string>("email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("passwordhash")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("user_id");
+
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("BookTradingHub.WebAPI.Models.Rating", b =>
+                {
+                    b.HasOne("BookTradingHub.WebAPI.Models.Book", "book")
+                        .WithMany()
+                        .HasForeignKey("book_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BookTradingHub.WebAPI.Models.User", "user")
+                        .WithMany()
+                        .HasForeignKey("user_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("book");
+
+                    b.Navigation("user");
                 });
 #pragma warning restore 612, 618
         }
