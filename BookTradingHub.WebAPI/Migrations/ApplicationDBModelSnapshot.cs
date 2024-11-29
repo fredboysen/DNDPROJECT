@@ -24,43 +24,40 @@ namespace BookTradingHub.WebAPI.Migrations
 
             modelBuilder.Entity("BookTradingHub.WebAPI.Models.Book", b =>
                 {
-                    b.Property<int>("BookId")
+                    b.Property<int>("Book_Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BookId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Book_Id"));
 
-                    b.Property<string>("Author")
+                    b.Property<string>("author")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Condition")
+                    b.Property<string>("condition")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Genre")
+                    b.Property<string>("genre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ISBN")
+                    b.Property<string>("isbn")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsAvailable")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("PublishDate")
+                    b.Property<DateTime>("publish_date")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Publisher")
+                    b.Property<string>("publisher")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Title")
+                    b.Property<string>("title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("BookId");
+                    b.HasKey("Book_Id");
 
                     b.ToTable("Books");
                 });
