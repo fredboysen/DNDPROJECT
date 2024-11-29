@@ -1,7 +1,5 @@
-using Microsoft.Extensions.DependencyInjection;
-using System.Net.Http;
-using System.Threading.Tasks;
 using BookTradingHub.Database.Data;
+using BookTradingHub.WebAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models; 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -19,12 +17,11 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "BookTradingHub API", Version = "v1" });
 });
 
-// Configure SQL Server with DbContext
+
 builder.Services.AddDbContext<ApplicationDB>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-
 // Register Razor Components (not strictly necessary unless you're adding Blazor components in the API)
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
@@ -46,6 +43,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 builder.Services.AddAuthorization();
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
+
 
 var app = builder.Build();
 
@@ -60,8 +59,13 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<ApplicationDB>();
+    DbSeeder.Seed(context);  // Call the seeding method
+}
+
 app.UseHttpsRedirection();  // Redirect HTTP requests to HTTPS
-app.UseAuthorization();  // Authorization middleware (if using authentication)
 
 app.MapControllers();  // Map API controllers to routes
 

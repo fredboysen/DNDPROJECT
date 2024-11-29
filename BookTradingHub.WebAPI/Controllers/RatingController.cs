@@ -1,52 +1,74 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using BookTradingHub.Database.Data; // Namespace for ApplicationDB context
-using BookTradingHub.WebAPI.Models; // Namespace for Book model
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using BookTradingHub.WebAPI.Models;
+using BookTradingHub.Database.Data;
 
-
-[Route("api/[controller]")]
-[ApiController]
-public class RatingsController : ControllerBase
+namespace BookTradingHub.WebAPI.Controllers
 {
-    private readonly ApplicationDB _context;
-
-    public RatingsController(ApplicationDB context)
+    [Route("api/[controller]")]
+    [ApiController]
+    public class RatingController : ControllerBase
     {
-        _context = context;
-    }
+        private readonly ApplicationDB _context;
 
-    [HttpPost]
-    public async Task<IActionResult> AddRating(Rating rating)
-    {
-        _context.Ratings.Add(rating);
-        await _context.SaveChangesAsync();
-        return CreatedAtAction(nameof(GetRating), new { id = rating.rating_id }, rating);
-    }
-
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Rating>> GetRating(int id)
-    {
-        var rating = await _context.Ratings
-            .Include(r => r.user)
-            .Include(r => r.book)
-            .FirstOrDefaultAsync(r => r.rating_id == id);
-
-        if (rating == null)
+        public RatingController(ApplicationDB context)
         {
-            return NotFound();
+            _context = context;
         }
 
-        return rating;
-    }
+        // POST: api/Rating/AddRating
+        [HttpPost("AddRating")]
+        public async Task<IActionResult> AddRating([FromBody] Rating rating)
+        {
+            // Validate rating value
+            if (rating.stars < 1 || rating.stars > 10)
+                return BadRequest("Rating must be between 1 and 10");
 
-    [HttpGet("book/{bookId}")]
-    public async Task<ActionResult<IEnumerable<Rating>>> GetRatingsForBook(int bookId)
-    {
-        return await _context.Ratings
-            .Where(r => r.book_id == bookId)
-            .Include(r => r.user)
-            .ToListAsync();
+            // Check if user exists
+            var user = await _context.Users.FindAsync(rating.user_Id);
+            if (user == null)
+                return NotFound("User not found");
+
+            // Check if book exists
+            var book = await _context.Books.FindAsync(rating.book_id);
+            if (book == null)
+                return NotFound("Book not found");
+
+            // Add the rating to the database
+            _context.Ratings.Add(rating);
+            await _context.SaveChangesAsync();
+
+            // Optionally update the book's average rating
+            var ratingsForBook = _context.Ratings.Where(r => r.book_id == book.book_Id);
+            if (ratingsForBook.Any())
+            {
+                // Recalculate average rating for the book
+                book.averageRating = ratingsForBook.Average(r => r.stars);
+            }
+            else
+            {
+                book.averageRating = 0; // No ratings yet, set default to 0 or another default value
+            }
+
+            // Save the updated average rating for the book
+            await _context.SaveChangesAsync();
+
+            return Ok($"Rating for '{book.title}' added successfully!");
+        }
+
+        // GET: api/Rating/{bookId}
+        [HttpGet("{bookId}")]
+        public async Task<IActionResult> GetRatingsByBookId(int bookId)
+        {
+            var ratings = await _context.Ratings
+                                        .Where(r => r.book_id == bookId)
+                                        .Include(r => r.user)  // Optionally include user details
+                                        .ToListAsync();
+
+            if (!ratings.Any())
+                return NotFound("No ratings found for this book.");
+
+            return Ok(ratings);
+        }
     }
 }

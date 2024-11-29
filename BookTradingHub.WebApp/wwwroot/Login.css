@@ -1,0 +1,226 @@
+/* Import Montserrat font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Global Styles */
+
+/* Reset default styles and set Montserrat as the default font */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #fdd835, #ffeb3b, #fbc02d); /* Gradient using yellow hues */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  color: #070606; /* Dark text for contrast against the yellow background */
+}
+
+/* Container Styling */
+.container {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  width: 1000px;
+  max-width: 100%; /* Ensure container doesn't exceed the viewport width */
+  min-height: 480px; /* Set minimum height for the container */
+  display: flex;
+  flex-direction: row; /* Layout both forms horizontally */
+}
+
+/* Container Paragraph Styling */
+.container p {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  margin: 20px 0;
+}
+
+/* Container Span Styling */
+.container span {
+  font-size: 12px;
+}
+
+/* Container Link Styling */
+.container a {
+  color: #333;
+  font-size: 13px;
+  text-decoration: none;
+  margin: 15px 0 10px;
+}
+
+/* Container Button Styling */
+.container button {
+  background-color: #fdda00;
+  color: #070606;
+  font-size: 12px;
+  padding: 10px 45px;
+  border: 1px solid black;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* Hidden Button Styling */
+.container button.hidden {
+  background-color: transparent;
+  border-color: rgb(0, 0, 0);
+}
+
+/* Container Form Styling */
+.container form {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  height: 100%;
+}
+
+/* Form Input Fields */
+.container input, .container select {
+  background-color: #eee;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+
+/* Form Container Styling */
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+  width: 200%; /* Ensures both forms are side by side */
+}
+
+/* Sign-in Styling */
+.sign-in {
+  left: 0;
+  width: 50%; /* Ensure sign-in form takes up half the container width */
+  z-index: 2;
+}
+
+/* Active Sign-in Styling */
+.container.active .sign-in {
+  transform: translateY(100%); 
+}
+
+/* Sign-up Styling */
+.sign-up {
+  left: 0;
+  width: 50%; /* Ensure sign-up form takes up half the container width */
+}
+
+/* Active Sign-up Styling */
+.container.active .sign-up {
+  transform: translateX(100%); /* Moves sign-up form off-screen when active */
+  animation: move 0.6s; /* Animation to fade out sign-up form */
+}
+
+/* Keyframes for Move Animation */
+@keyframes move {
+  0%, 49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+  50%, 100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+/* Toggle Container Styling */
+.toggle-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%; /* Ensure toggle container takes up half the container width */
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+  border-radius: 150px 0 0 100px;
+  z-index: 1000;
+}
+
+/* Active Toggle Container Styling */
+.container.active .toggle-container {
+  transform: translateX(-100%); /* Moves toggle container to the left when active */
+  border-radius: 0 100px 100px 0;
+}
+
+/* Toggle Styling */
+.toggle {
+  background-color: #fdda00;
+  height: 100%;
+  background: linear-gradient(to right, #fdda00, #fdd835); /* Yellow gradient toggle */
+  color: #141414;
+  position: relative;
+  left: -100%;
+  width: 200%; /* Ensure toggle is wide enough to cover both panels */
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+/* Active Toggle Styling */
+.container.active .toggle {
+  transform: translateX(50%); /* Move toggle to the active position */
+}
+
+/* Toggle Panel Styling */
+.toggle-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 30px;
+  text-align: center;
+  top: 0;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+/* Toggle Left Styling */
+.toggle-left {
+  transform: translateX(-200%); /* Ensure left panel is initially off-screen */
+}
+
+/* Active Toggle Left Styling */
+.container.active .toggle-left {
+  transform: translateX(0);
+}
+
+/* Toggle Right Styling */
+.toggle-right {
+  right: 0;
+  transform: translateX(0); /* Ensure right panel is positioned correctly */
+}
+
+/* Active Toggle Right Styling */
+.container.active .toggle-right {
+  transform: translateX(200%); /* Ensure right panel moves off-screen when active */
+}
+
+/* Focus Styling for Select Elements */
+.container select:focus {
+  outline: none;
+  border: 1px solid #fdda00; /* Add focus styling if needed */
+}

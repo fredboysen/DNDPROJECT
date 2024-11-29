@@ -1,6 +1,7 @@
 using BookTradingHub.WebApp.Components;
 using Microsoft.Extensions.DependencyInjection;
 using System.Net.Http;
+using Blazored.LocalStorage;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,9 +11,13 @@ builder.Services.AddHttpClient("WebAPI", client =>
     client.BaseAddress = new Uri("https://localhost:7167");  // Your WebAPI base URL
 });
 
-// Add Razor Components
+builder.Services.AddScoped<HttpClient>(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7167/") });
+
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddBlazoredLocalStorage();
+
 
 var app = builder.Build();
 

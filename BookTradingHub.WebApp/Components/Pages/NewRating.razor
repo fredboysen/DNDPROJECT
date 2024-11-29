@@ -1,4 +1,4 @@
-@page "/newrating"
+@page "/newrating/{book_Id:int}"
 
 <h3>Add New Rating</h3>
 
@@ -25,10 +25,10 @@
 }
 
 @code {
-    private string BookName { get; set; }
+    private string BookName { get; set; } = "";
     private int StarRating { get; set; } = 1;
-    private string Description { get; set; }
-    private string Message { get; set; }
+    private string Description { get; set; } = "";
+    private string Message { get; set; } = "";
 
     private void AddRating()
     {
@@ -43,5 +43,3 @@
         // In the future, save this data to the database
     }
 }
-
-

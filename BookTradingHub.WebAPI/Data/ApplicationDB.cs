@@ -15,16 +15,18 @@ namespace BookTradingHub.Database.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Define relationships
+            // Define relationships compatible with SQLite
             modelBuilder.Entity<Rating>()
                 .HasOne(r => r.book)
                 .WithMany()
-                .HasForeignKey(r => r.book_id);
+                .HasForeignKey(r => r.book_id)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Rating>()
                 .HasOne(r => r.user)
                 .WithMany()
-                .HasForeignKey(r => r.user_Id);
+                .HasForeignKey(r => r.user_Id)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

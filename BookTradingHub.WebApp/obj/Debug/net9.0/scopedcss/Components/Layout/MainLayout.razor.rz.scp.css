@@ -1,7 +1,9 @@
+
 .page[b-r3fbocw5im] {
     position: relative;
     display: flex;
     flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
 }
 
 main[b-r3fbocw5im] {
@@ -10,7 +12,7 @@ main[b-r3fbocw5im] {
 }
 
 .top-nav[b-r3fbocw5im] {
-    background-image: linear-gradient(90deg, rgb(128, 75, 6) 60%, #c59a58 80%);
+    background: linear-gradient(to right, #fdd835, #ffeb3b, #fbc02d);
     height: 5rem;
     display: flex;
     align-items: center;
@@ -25,7 +27,7 @@ main[b-r3fbocw5im] {
 
 #blazor-error-ui[b-r3fbocw5im] {
     color-scheme: light only;
-    background: lightyellow;
+    background: #fff3b0; /* Light yellow background for the error UI */
     bottom: 0;
     box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
@@ -34,7 +36,7 @@ main[b-r3fbocw5im] {
     padding: 0.6rem 1.25rem 0.7rem 1.25rem;
     position: fixed;
     width: 100%;
-    z-index: 1001; 
+    z-index: 1001;
 }
 
 #blazor-error-ui .dismiss[b-r3fbocw5im] {
@@ -44,6 +46,7 @@ main[b-r3fbocw5im] {
     top: 0.5rem;
 }
 
+/* Adjusted layout for larger screens */
 @media (min-width: 641px) {
     .page[b-r3fbocw5im] {
         flex-direction: column;
@@ -56,4 +59,3 @@ main[b-r3fbocw5im] {
         top: 0;
     }
 }
-

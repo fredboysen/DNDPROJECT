@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\Documents\\DNDproject\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj": {}
+    "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\Documents\\DNDproject\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj": {
+    "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\Documents\\DNDproject\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj",
         "projectName": "BookTradingHub.WebAPI",
-        "projectPath": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\Documents\\DNDproject\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj",
-        "packagesPath": "C:\\Users\\Thoma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\Documents\\DNDproject\\DNDPROJECT\\BookTradingHub.WebAPI\\obj\\",
+        "projectPath": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj",
+        "packagesPath": "C:\\Users\\frebo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Thoma\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\frebo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -66,6 +66,10 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -112,17 +116,17 @@
         }
       }
     },
-    "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\Documents\\DNDproject\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj": {
+    "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\Documents\\DNDproject\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj",
+        "projectUniqueName": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj",
         "projectName": "BookTradingHub.WebApp",
-        "projectPath": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\Documents\\DNDproject\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj",
-        "packagesPath": "C:\\Users\\Thoma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\Documents\\DNDproject\\DNDPROJECT\\BookTradingHub.WebApp\\obj\\",
+        "projectPath": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj",
+        "packagesPath": "C:\\Users\\frebo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Thoma\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\frebo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -134,8 +138,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\Documents\\DNDproject\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj": {
-                "projectPath": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\Documents\\DNDproject\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj"
+              "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj": {
+                "projectPath": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj"
               }
             }
           }
@@ -155,6 +159,12 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Blazored.LocalStorage": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

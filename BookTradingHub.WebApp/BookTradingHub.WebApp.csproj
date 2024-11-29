@@ -10,4 +10,8 @@
     <ProjectReference Include="..\BookTradingHub.WebAPI\BookTradingHub.WebAPI.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
+  </ItemGroup>
+
 </Project>
