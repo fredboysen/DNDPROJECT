@@ -5,7 +5,7 @@
 <!-- Link external styles -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="AccountLayout.css">
-<script src="Account.js"></script>
+
 <div id="container" class="container @(IsSignUpActive ? "active" : "")">
     <!-- Sign-Up Form -->
     <div class="form-container sign-up">
@@ -24,7 +24,7 @@
     </div>
 
     <!-- Sign-In Form -->
-    <div class="form-container sign-in"> 
+    <div class="form-container sign-in">
         <EditForm Model="@loginModel">
             <h1>Sign In</h1>
             <InputText id="login-email" placeholder="Email" @bind-Value="loginModel.Email" />
@@ -50,7 +50,7 @@
     </div>
 </div>
 
-
+<script src="Account.js"></script>
 
 @code {
     private LoginModel loginModel = new LoginModel();
@@ -63,7 +63,7 @@
     {
         if (firstRender)
         {
-            // Ensure JS initialization after first render
+            // Initialize the JavaScript toggle logic
             await JSRuntime.InvokeVoidAsync("initializeAccountToggle");
         }
     }
