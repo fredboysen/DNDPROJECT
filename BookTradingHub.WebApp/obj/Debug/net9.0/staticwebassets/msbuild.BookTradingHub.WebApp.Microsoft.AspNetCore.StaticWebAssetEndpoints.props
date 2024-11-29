@@ -1,5 +1,6 @@
 ﻿<Project>
   <ItemGroup>
+<<<<<<< HEAD
     <StaticWebAssetEndpoint Include="_content/BookTradingHub.WebApp/Account.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Account.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -29,12 +30,24 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"85xj6yaxlw"},{"Name":"integrity","Value":"sha256-dGNMkncTSEeILyWjmp04AAAEhudBy/kYYzMMMBy0mt4="},{"Name":"label","Value":"_content/BookTradingHub.WebApp/app.css"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3050"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022dGNMkncTSEeILyWjmp04AAAEhudBy/kYYzMMMBy0mt4=\u0022"},{"Name":"Last-Modified","Value":"Fri, 29 Nov 2024 12:46:03 GMT"}]]]></ResponseHeaders>
+=======
+    <StaticWebAssetEndpoint Include="_content/BookTradingHub.WebApp/app.1e2er87hbu.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"1e2er87hbu"},{"Name":"integrity","Value":"sha256-ZzG\u002BfnEH1v6oCI5QWmerXa58g2dHQuPk\u002BQa9aNscCOM="},{"Name":"label","Value":"_content/BookTradingHub.WebApp/app.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5319"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022ZzG\u002BfnEH1v6oCI5QWmerXa58g2dHQuPk\u002BQa9aNscCOM=\u0022"},{"Name":"Last-Modified","Value":"Fri, 29 Nov 2024 14:08:04 GMT"}]]]></ResponseHeaders>
+>>>>>>> 239e9f71bf3eb057665ca7a2ba89b95446af5a1e
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/BookTradingHub.WebApp/app.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
+<<<<<<< HEAD
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-dGNMkncTSEeILyWjmp04AAAEhudBy/kYYzMMMBy0mt4="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3050"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022dGNMkncTSEeILyWjmp04AAAEhudBy/kYYzMMMBy0mt4=\u0022"},{"Name":"Last-Modified","Value":"Fri, 29 Nov 2024 12:46:03 GMT"}]]]></ResponseHeaders>
+=======
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ZzG\u002BfnEH1v6oCI5QWmerXa58g2dHQuPk\u002BQa9aNscCOM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"5319"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022ZzG\u002BfnEH1v6oCI5QWmerXa58g2dHQuPk\u002BQa9aNscCOM=\u0022"},{"Name":"Last-Modified","Value":"Fri, 29 Nov 2024 14:08:04 GMT"}]]]></ResponseHeaders>
+>>>>>>> 239e9f71bf3eb057665ca7a2ba89b95446af5a1e
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/BookTradingHub.WebApp/book-trading-hub-high-resolution-logo-transparent.50uufomupf.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\book-trading-hub-high-resolution-logo-transparent.png'))</AssetFile>
@@ -100,13 +113,21 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\BookTradingHub.WebApp.wgegnnykmf.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-wP/SQUUxN12dmIWsxBKyzHpNGkHsygyhRdpaDLjNtRg="}]]]></EndpointProperties>
+<<<<<<< HEAD
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"6121"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022wP/SQUUxN12dmIWsxBKyzHpNGkHsygyhRdpaDLjNtRg=\u0022"},{"Name":"Last-Modified","Value":"Fri, 29 Nov 2024 14:16:15 GMT"}]]]></ResponseHeaders>
+=======
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"6121"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022wP/SQUUxN12dmIWsxBKyzHpNGkHsygyhRdpaDLjNtRg=\u0022"},{"Name":"Last-Modified","Value":"Fri, 29 Nov 2024 12:58:16 GMT"}]]]></ResponseHeaders>
+>>>>>>> 239e9f71bf3eb057665ca7a2ba89b95446af5a1e
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/BookTradingHub.WebApp/BookTradingHub.WebApp.wgegnnykmf.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\BookTradingHub.WebApp.wgegnnykmf.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wgegnnykmf"},{"Name":"integrity","Value":"sha256-wP/SQUUxN12dmIWsxBKyzHpNGkHsygyhRdpaDLjNtRg="},{"Name":"label","Value":"_content/BookTradingHub.WebApp/BookTradingHub.WebApp.bundle.scp.css"}]]]></EndpointProperties>
+<<<<<<< HEAD
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"6121"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022wP/SQUUxN12dmIWsxBKyzHpNGkHsygyhRdpaDLjNtRg=\u0022"},{"Name":"Last-Modified","Value":"Fri, 29 Nov 2024 14:16:15 GMT"}]]]></ResponseHeaders>
+=======
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"6121"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022wP/SQUUxN12dmIWsxBKyzHpNGkHsygyhRdpaDLjNtRg=\u0022"},{"Name":"Last-Modified","Value":"Fri, 29 Nov 2024 12:58:16 GMT"}]]]></ResponseHeaders>
+>>>>>>> 239e9f71bf3eb057665ca7a2ba89b95446af5a1e
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/BookTradingHub.WebApp/favicon.ifv42okdf2.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.png'))</AssetFile>
