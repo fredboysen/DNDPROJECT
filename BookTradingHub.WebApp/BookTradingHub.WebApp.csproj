@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
+    <PackageReference Include="Syncfusion.Blazor.Inputs" Version="27.2.4" />
   </ItemGroup>
 
 </Project>

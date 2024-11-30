@@ -104,7 +104,7 @@ h1:focus {
 /* Style for the book image */
 .book-image {
     width: 100%;
-    height: 300px;
+    height: 380px;
     object-fit: cover;
     border-bottom: 1px solid #ddd;
 }
@@ -124,9 +124,24 @@ h1:focus {
 }
 
 /* Author and other details */
-.book-author, .book-isbn, .book-genre, .book-publisher, .book-condition, .book-rating {
+.book-author, .book-isbn, .book-genre, .book-publisher, .book-condition {
     font-size: 0.9rem;
     margin-bottom: 5px;
+}
+
+.book-rating-green {
+    font-weight: bold;
+    color: #00ac33;
+}
+
+.book-rating-yellow {
+    font-weight: bold;
+    color: #b99a00;
+}
+
+.book-rating-red {
+    font-weight: bold;
+    color: #9c000d;
 }
 
 /* Styling for smaller details like publish date and condition */
@@ -197,6 +212,25 @@ label{
     font-weight: bold;
 }
 
+/* Style for the current value box */
+.slider-value-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; 
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-weight: bold;
+    color: #333;
+}
+
+.slider-wrapper {
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
 
 
 /* ------------------------------------------------------------------------------------*/

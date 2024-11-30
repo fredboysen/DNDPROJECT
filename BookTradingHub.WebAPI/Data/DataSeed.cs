@@ -47,7 +47,7 @@ namespace BookTradingHub.Database.Data
                     publisher = "Random House",
                     publish_Date = new DateTime(2018, 2, 20),
                     condition = "New",
-                    averageRating = 4.7,
+                    averageRating = 2.7,
                     ImageUrl = "book3.jpg"
                 },
                 new Book
@@ -61,7 +61,32 @@ namespace BookTradingHub.Database.Data
                     condition = "New",
                     averageRating = 4.8,
                     ImageUrl = "book4.jpg"
+                },
+                new Book
+                {
+                    title = "The Suicide Prevention Pocketbook",
+                    author = "Joy Hibbins",
+                    isbn = "1234567890",
+                    genre = "Mental Health",
+                    publisher = "Wellbeing Books",
+                    publish_Date = new DateTime(2019, 5, 15),
+                    condition = "New",
+                    averageRating = 3.1,
+                    ImageUrl = "book5.jpg"
+                },
+                new Book
+                {
+                    title = "C# For Dummies",
+                    author = "Stephen Randy Davis",
+                    isbn = "1122334455",
+                    genre = "Programming",
+                    publisher = "For Dummies",
+                    publish_Date = new DateTime(2021, 8, 10),
+                    condition = "New",
+                    averageRating = 1.2,
+                    ImageUrl = "book6.jpg"
                 }
+
             };
 
             context.Books.AddRange(books);

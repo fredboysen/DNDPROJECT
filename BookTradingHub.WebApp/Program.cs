@@ -2,6 +2,7 @@ using BookTradingHub.WebApp.Components;
 using Microsoft.Extensions.DependencyInjection;
 using System.Net.Http;
 using Blazored.LocalStorage;
+using Syncfusion.Blazor;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,9 @@ builder.Services.AddHttpClient("WebAPI", client =>
 {
     client.BaseAddress = new Uri("https://localhost:7167");  // Your WebAPI base URL
 });
+
+// Register Syncfusion Blazor service
+builder.Services.AddSyncfusionBlazor();
 
 
 
