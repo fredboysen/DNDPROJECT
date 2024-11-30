@@ -1,141 +1,67 @@
-﻿@page "/Login"
-@using BookTradingHub.WebAPI.Models
+﻿@page "/login"
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 
 <PageTitle>Login</PageTitle>
-<link rel="stylesheet" href="Login.css">
-<div id="container" class="container @(IsSignUpActive ? "active" : "")">
-    <!-- Sign-Up Form -->
-    <div class="form-container sign-up @(IsSignUpActive ? "active" : "")">
-        <EditForm Model="@registerModel" OnValidSubmit="HandleRegisterSubmit" FormName="RegisterForm" @ref="registerForm">
-            <h1>Create Account</h1>
-            <InputText id="register-name" placeholder="Username" @bind-Value="registerModel.Username" />
-            <InputText id="register-email" placeholder="Email" @bind-Value="registerModel.Email" />
-            <InputText type="password" id="register-password" placeholder="Password" @bind-Value="registerModel.Password" autocomplete="new-password" />
-            <InputSelect id="register-role" @bind-Value="registerModel.Role">
-                <option value="User">User</option>
-                <option value="Admin">Admin</option>
-            </InputSelect>
-            <button type="submit">Sign Up</button>
-        </EditForm>
+
+<h3>Login to Book Trading Hub</h3>
+
+<EditForm Model="@user" OnValidSubmit="HandleLoginSubmit" FormName="loginForm">
+    <div class="form-group">
+        <!-- Username input field -->
+        <InputText id="login-username" placeholder="Username" @bind-Value="user.username" class="form-control" />
     </div>
 
-    <!-- Sign-In Form -->
-    <div class="form-container sign-in @(IsSignUpActive ? "" : "active")">
-        <EditForm Model="@loginModel" OnValidSubmit="HandleLoginSubmit" FormName="LoginForm" @ref="loginForm">
-            <h1>Sign In</h1>
-            <InputText id="login-email" placeholder="Email" @bind-Value="loginModel.Email" />
-            <InputText type="password" id="login-password" placeholder="Password" @bind-Value="loginModel.Password" autocomplete="current-password" />
-            <button type="submit">Sign In</button>
-        </EditForm>
+    <div class="form-group">
+        <!-- Password input field -->
+        <InputText type="password" id="login-password" placeholder="Password" @bind-Value="user.password" class="form-control" />
     </div>
 
-    <!-- Toggle Container -->
-    <div class="toggle-container">
-        <div class="toggle">
-            <div class="toggle-panel toggle-left">
-                <h1>Already have an Account?</h1>
-                <p>Please sign in to continue.</p>
-                <button class="toggle-button sign-in" @onclick="() => Toggle(false)">Sign In</button>
-            </div>
-            <div class="toggle-panel toggle-right">
-                <h1>Join us!</h1>
-                <p>Create an account to get started.</p>
-                <button class="toggle-button sign-up" @onclick="() => Toggle(true)">Sign Up</button>
-            </div>
-        </div>
-    </div>
-</div>
+    <button type="submit" class="btn btn-primary">Sign In</button>
+</EditForm>
 
-<script src="Login.js"></script>
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger mt-2">
+        @errorMessage
+    </div>
+}
 
 @code {
-    private LoginModel loginModel = new LoginModel();
-    private RegisterModel registerModel = new RegisterModel();
-    private bool IsSignUpActive { get; set; } = false;
+    private User user = new User();
+    private string errorMessage;
 
-    // References to the forms
-    private EditForm registerForm;
-    private EditForm loginForm;
-
-    // Handle Sign In
+    // Handle login form submission
     private async Task HandleLoginSubmit()
     {
-        var loginDto = new LoginDTO
+        try
         {
-            username = loginModel.Email,
-            password = loginModel.Password
-        };
+            // Send login request to the backend API
+            var response = await Http.PostAsJsonAsync("https://localhost:7167/api/user", user);
 
-        var response = await Http.PostAsJsonAsync("api/auth/login", loginDto);
-        
-        if (response.IsSuccessStatusCode)
-        {
-            var result = await response.Content.ReadFromJsonAsync<TokenResponse>();
-            // Store the JWT token (you can store it in localStorage, cookies, etc.)
-            Console.WriteLine($"Logged in successfully! Token: {result?.token}");
-            NavigationManager.NavigateTo("/Home"); // Redirect to the home page
+            if (response.IsSuccessStatusCode)
+            {
+                // Navigate to home page on successful login
+                NavigationManager.NavigateTo("/");
+            }
+            else
+            {
+                // Show error message on failure
+                errorMessage = "Invalid username or password.";
+            }
         }
-        else
+        catch (Exception ex)
         {
-            Console.WriteLine("Invalid username or password.");
-        }
-    }
-
-    // Handle Sign Up
-    private async Task HandleRegisterSubmit()
-    {
-        var user = new User
-        {
-            username = registerModel.Username,   // Using username as per the API model
-            passwordhash = registerModel.Password, // Plain password, backend will hash it
-            email = registerModel.Email,
-            role = registerModel.Role
-        };
-
-            var response = await Http.PostAsJsonAsync("api/auth/register", user);
-
-        if (response.IsSuccessStatusCode)
-        {
-            Console.WriteLine("User registered successfully.");
-            Toggle(false); // Switch to the login screen
-        }
-        else
-        {
-            Console.WriteLine("Username already exists or registration failed.");
+            errorMessage = $"An error occurred: {ex.Message}";
         }
     }
 
-    // Toggle between Sign-Up and Sign-In forms
-    private async Task Toggle(bool signUp)
+    // Define User model with lowercase properties
+    public class User
     {
-        IsSignUpActive = signUp;
-    }
-
-    // Models for Login and Register
-    public class LoginModel
-    {
-        public string Email { get; set; } = "";
-        public string Password { get; set; } = "";
-    }
-
-    public class RegisterModel
-    {
-        public string Username { get; set; } = ""; // Username as per the API model
-        public string Email { get; set; } = "";
-        public string Password { get; set; } = "";
-        public string Role { get; set; } = "User"; // Default role is User
-    }
-
-    public class LoginDTO
-    {
-        public string username { get; set; } = string.Empty;
-        public string password { get; set; } = string.Empty;
-    }
-
-    public class TokenResponse
-    {
-        public string token { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public string email { get; set; }
+        public string role { get; set; } = "User"; // Default role
     }
 }

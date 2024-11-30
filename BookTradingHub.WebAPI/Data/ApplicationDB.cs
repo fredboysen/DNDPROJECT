@@ -9,6 +9,8 @@ namespace BookTradingHub.Database.Data
 
         public DbSet<Book> Books { get; set; }
         public DbSet<User> Users { get; set; }
+
+        
         public DbSet<Rating> Ratings { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -27,6 +29,10 @@ namespace BookTradingHub.Database.Data
                 .WithMany()
                 .HasForeignKey(r => r.user_Id)
                 .OnDelete(DeleteBehavior.Cascade);
+
+                modelBuilder.Entity<User>()
+                .Property(u => u.username)
+                .HasMaxLength(100);
         }
     }
 }

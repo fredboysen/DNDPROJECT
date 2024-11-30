@@ -5,16 +5,12 @@
       "PackagePath": "staticwebassets\\BookTradingHub.WebApp.o9wd5e06yq.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\wwwroot\\Account.js",
-      "PackagePath": "staticwebassets\\Account.js"
+      "Id": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\wwwroot\\Login.css",
+      "PackagePath": "staticwebassets\\Login.css"
     },
     {
-      "Id": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\wwwroot\\AccountLayout.css",
-      "PackagePath": "staticwebassets\\AccountLayout.css"
-    },
-    {
-      "Id": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\wwwroot\\DarkMode.js",
-      "PackagePath": "staticwebassets\\DarkMode.js"
+      "Id": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\wwwroot\\Login.js",
+      "PackagePath": "staticwebassets\\Login.js"
     },
     {
       "Id": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\wwwroot\\app.css",

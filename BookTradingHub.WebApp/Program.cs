@@ -11,7 +11,7 @@ builder.Services.AddHttpClient("WebAPI", client =>
     client.BaseAddress = new Uri("https://localhost:7167");  // Your WebAPI base URL
 });
 
-builder.Services.AddScoped<HttpClient>(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7167/") });
+
 
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();

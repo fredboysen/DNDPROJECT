@@ -1,18 +1,17 @@
-using BookTradingHub.WebAPI.Models;  // Adjust to your namespace
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Linq;
+using BookTradingHub.WebAPI.Models; 
 
 namespace BookTradingHub.Database.Data
+
 {
     public static class DbSeeder
     {
         public static void Seed(ApplicationDB context)
         {
-            // Remove all existing books
+            // Remove existing data
             context.Books.RemoveRange(context.Books);
+            context.Users.RemoveRange(context.Users); // Remove all users (for seeding)
 
-            // Add new sample data
+            // Seed new books
             var books = new[]
             {
                 new Book
@@ -65,11 +64,32 @@ namespace BookTradingHub.Database.Data
                 }
             };
 
-            // Add new books
             context.Books.AddRange(books);
 
-            // Save changes to the database
+            // Seed new users
+            var users = new[]
+            {
+                new User
+                {
+                    username = "testuser",
+                    email = "testuser@example.com",
+                    role = "user",
+                    password = "test123"  // Make sure password is stored as plain text or use a hash
+                },
+                new User
+                {
+                    username = "testadmin",
+                    email = "testadmin@example.com",
+                    role = "admin",
+                    password = "test123"  // Same note as above for password handling
+                }
+            };
+
+            context.Users.AddRange(users);
+
+            // Save changes to database
             context.SaveChanges();
         }
     }
 }
+
