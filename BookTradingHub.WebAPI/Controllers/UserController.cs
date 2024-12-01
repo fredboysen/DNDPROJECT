@@ -54,6 +54,7 @@ public async Task<IActionResult> Register(User user)
             return StatusCode(500, $"Error registering user: {ex.Message}");
         }
     }
+    
 
 }
 }
