@@ -1,8 +1,12 @@
 using BookTradingHub.WebApp.Components;
 using Blazored.LocalStorage;
+<<<<<<< HEAD
 using BookTradingHub.WebAPI.Auth;
 using BookTradingHub.WebApp.Services.Http;
 using Microsoft.AspNetCore.Components.Authorization;
+=======
+using Syncfusion.Blazor;
+>>>>>>> bc745eae5ac03e3115fd7b7b37dbf4ec9eb151d0
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,8 +16,14 @@ builder.Services.AddHttpClient("WebAPI", client =>
     client.BaseAddress = new Uri("https://localhost:7167");  // Your WebAPI base URL
 });
 
+<<<<<<< HEAD
 // Add scoped HttpClient for dependency injection
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7167") });
+=======
+// Register Syncfusion Blazor service
+builder.Services.AddSyncfusionBlazor();
+
+>>>>>>> bc745eae5ac03e3115fd7b7b37dbf4ec9eb151d0
 
 builder.Services.AddAuthentication().AddCookie(options =>
 {

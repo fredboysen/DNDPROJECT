@@ -1,23 +1,44 @@
 @page "/newrating"
+@inject HttpClient Http
+@rendermode InteractiveServer
 
 <h3>Add New Rating</h3>
 
-<div class="form-group">
-    <label for="bookName">Book Name</label>
-    <input type="text" id="bookName" class="form-control" @bind="BookName" placeholder="Enter book name" />
-</div>
+<EditForm Model="@ratingModel" OnValidSubmit="@AddRating">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
 
-<div class="form-group star-container">
-    <label for="starRating">Rating</label>
-    <input type="range" id="starRating" class="form-control" @bind="StarRating" min="1" max="10" />
-</div>
+    <div class="form-group">
+        <label for="bookName">Select Book</label>
+        <select id="bookName" class="form-control" @bind="ratingModel.BookId">
+            <option value="">-- Select a Book --</option>
+            @if (Books != null)
+            {
+                @foreach (var book in Books)
+                {
+                    <option value="@book.book_Id">@book.title</option>
+                }
+            }
+        </select>
+    </div>
+    
+    <div class="form-group star-container">
+        <label for="starRating">Rating</label>
+        <div class="slider-wrapper">
+            <input type="range" id="starRating" class="form-control" @bind="ratingModel.StarRating" min="1" max="5" @oninput="UpdateValue" />
+            <div class="slider-value-box">
+                @ratingModel.StarRating
+            </div>
+        </div>
+    </div>
 
-<div class="form-group">
-    <label for="description">Description</label>
-    <textarea id="description-container" class="form-control" @bind="Description" placeholder="Write your review"></textarea>
-</div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description-container" class="form-control" @bind="ratingModel.Description"></textarea>
+    </div>
 
-<button class="btn btn-primary" @onclick="AddRating">Add</button>
+    <button class="btn btn-primary">Add</button>
+</EditForm>
 
 @if (!string.IsNullOrEmpty(Message))
 {
@@ -25,21 +46,42 @@
 }
 
 @code {
-    private string BookName { get; set; } = "";
-    private int StarRating { get; set; } = 1;
-    private string Description { get; set; } = "";
-    private string Message { get; set; } = "";
+    private List<Book> Books = new(); 
+    private RatingModel ratingModel = new(); 
+    private string Message;
 
-    private void AddRating()
+    protected override async Task OnInitializedAsync()
     {
-        // Placeholder logic to handle adding a rating
-        if (StarRating < 1 || StarRating > 10 || string.IsNullOrWhiteSpace(BookName))
+        try
         {
-            Message = "Please provide valid inputs!";
-            return;
+            Books = await Http.GetFromJsonAsync<List<Book>>("https://localhost:7167/api/books");
         }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error fetching books: {ex.Message}");
+        }
+    }
 
-        Message = $"Successfully added a rating for {BookName}!";
-        // In the future, save this data to the database
+    private async Task AddRating()
+    {
+        Message = "Rating added successfully!";
+    }
+
+    private void UpdateValue(ChangeEventArgs e)
+    {
+        ratingModel.StarRating = int.Parse(e.Value.ToString());
+    }
+
+    public class RatingModel
+    {
+        public int BookId { get; set; }  
+        public int StarRating { get; set; } = 1; 
+        public string Description { get; set; }  
+    }
+
+    private class Book
+    {
+        public int book_Id { get; set; }
+        public string title { get; set; }
     }
 }

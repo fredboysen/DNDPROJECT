@@ -29,7 +29,7 @@
                     <p class="book-publisher">Publisher: @book.publisher</p>
                     <p class="book-publish-date">Published: @book.publish_Date.ToShortDateString()</p>
                     <p class="book-condition">Condition: @book.condition</p>
-                    <p class="book-rating">Average Rating: @book.averageRating</p>
+                    <p class="@GetRatingClass(book.averageRating)">Rating: @book.averageRating</p>
                 </div>
             </NavLink>
         }
@@ -65,4 +65,21 @@
         public double averageRating { get; set; }
         public string ImageUrl { get; set; } = "";
     }
+    private string GetRatingClass(double rating)
+    {
+        if (rating < 2)
+        {
+            return "book-rating-red";
+        }
+        else if (rating >= 2 && rating < 3.5)
+        {
+            return "book-rating-yellow";
+        }
+        else
+        {
+            return "book-rating-green";
+        }
+    }
+}
+
 }

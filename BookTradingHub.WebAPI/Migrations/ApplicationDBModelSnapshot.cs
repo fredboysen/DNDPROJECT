@@ -110,6 +110,7 @@ namespace BookTradingHub.WebAPI.Migrations
 
                     b.Property<string>("username")
                         .IsRequired()
+                        .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
                     b.HasKey("user_id");

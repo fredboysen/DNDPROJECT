@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookTradingHub.WebAPI.Migrations
 {
     [DbContext(typeof(ApplicationDB))]
-    [Migration("20241129172057_New")]
-    partial class New
+    [Migration("20241130122028_fixedMigrationName")]
+    partial class fixedMigrationName
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -103,7 +103,7 @@ namespace BookTradingHub.WebAPI.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("passwordhash")
+                    b.Property<string>("password")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -113,6 +113,7 @@ namespace BookTradingHub.WebAPI.Migrations
 
                     b.Property<string>("username")
                         .IsRequired()
+                        .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
                     b.HasKey("user_id");
