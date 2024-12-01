@@ -12,11 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
-<<<<<<< HEAD
     <PackageReference Include="microsoft.identitymodel.tokens" Version="8.2.1" />
-=======
-    <PackageReference Include="Syncfusion.Blazor.Inputs" Version="27.2.4" />
->>>>>>> bc745eae5ac03e3115fd7b7b37dbf4ec9eb151d0
   </ItemGroup>
 
 </Project>

@@ -5,24 +5,17 @@
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\jonas\.nuget\packages\</NuGetPackageFolders>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\frebo\.nuget\packages\</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.12.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="C:\Users\jonas\.nuget\packages\" />
+    <SourceRoot Include="C:\Users\frebo\.nuget\packages\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)syncfusion.blazor.core\27.2.4\buildTransitive\Syncfusion.Blazor.Core.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.core\27.2.4\buildTransitive\Syncfusion.Blazor.Core.props')" />
-    <Import Project="$(NuGetPackageRoot)syncfusion.blazor.spinner\27.2.4\buildTransitive\Syncfusion.Blazor.Spinner.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.spinner\27.2.4\buildTransitive\Syncfusion.Blazor.Spinner.props')" />
-    <Import Project="$(NuGetPackageRoot)syncfusion.blazor.buttons\27.2.4\buildTransitive\Syncfusion.Blazor.Buttons.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.buttons\27.2.4\buildTransitive\Syncfusion.Blazor.Buttons.props')" />
-    <Import Project="$(NuGetPackageRoot)syncfusion.blazor.popups\27.2.4\buildTransitive\Syncfusion.Blazor.Popups.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.popups\27.2.4\buildTransitive\Syncfusion.Blazor.Popups.props')" />
-    <Import Project="$(NuGetPackageRoot)syncfusion.blazor.splitbuttons\27.2.4\buildTransitive\Syncfusion.Blazor.SplitButtons.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.splitbuttons\27.2.4\buildTransitive\Syncfusion.Blazor.SplitButtons.props')" />
-    <Import Project="$(NuGetPackageRoot)syncfusion.blazor.data\27.2.4\buildTransitive\Syncfusion.Blazor.Data.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.data\27.2.4\buildTransitive\Syncfusion.Blazor.Data.props')" />
-    <Import Project="$(NuGetPackageRoot)syncfusion.blazor.inputs\27.2.4\buildTransitive\Syncfusion.Blazor.Inputs.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.inputs\27.2.4\buildTransitive\Syncfusion.Blazor.Inputs.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore\9.0.0\buildTransitive\net8.0\Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore\9.0.0\buildTransitive\net8.0\Microsoft.EntityFrameworkCore.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgMicrosoft_Extensions_ApiDescription_Server Condition=" '$(PkgMicrosoft_Extensions_ApiDescription_Server)' == '' ">C:\Users\jonas\.nuget\packages\microsoft.extensions.apidescription.server\6.0.5</PkgMicrosoft_Extensions_ApiDescription_Server>
+    <PkgMicrosoft_Extensions_ApiDescription_Server Condition=" '$(PkgMicrosoft_Extensions_ApiDescription_Server)' == '' ">C:\Users\frebo\.nuget\packages\microsoft.extensions.apidescription.server\6.0.5</PkgMicrosoft_Extensions_ApiDescription_Server>
   </PropertyGroup>
 </Project>
