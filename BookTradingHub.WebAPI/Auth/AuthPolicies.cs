@@ -1,18 +1,19 @@
 using System.Security.Claims;
-using Microsoft.Extensions.DependencyInjection;
 
-namespace BookTradingHub.WebAPI.Auth;
-public static class AuthorizationPolicies
+namespace BookTradingHub.WebAPI.Auth
 {
-    public static void AddPolicies(IServiceCollection services)
+    public static class AuthorizationPolicies
     {
-        services.AddAuthorizationCore(options =>
+        public static void AddPolicies(IServiceCollection services)
         {
-            options.AddPolicy("User", a =>
-                a.RequireAuthenticatedUser().RequireClaim("Role", "User"));
+            services.AddAuthorizationCore(options =>
+            {
+                options.AddPolicy("User", a =>
+                    a.RequireAuthenticatedUser().RequireClaim(ClaimTypes.Role, "User"));
 
-            options.AddPolicy("Admin", a =>
-                a.RequireAuthenticatedUser().RequireClaim("Role", "Admin"));
-        });
+                options.AddPolicy("Admin", a =>
+                    a.RequireAuthenticatedUser().RequireClaim(ClaimTypes.Role, "Admin"));
+            });
+        }
     }
 }
