@@ -1,0 +1,88 @@
+@page "/ratingslist"
+@inject HttpClient Http
+
+
+<h3>All Ratings</h3>
+
+@if (ratings != null && ratings.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Book Title</th>
+                <th>Rating</th>
+                <th>Review</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var rating in ratings)
+            {
+                <tr>
+                    <td>@rating.title</td>
+                    <td>@rating.stars</td>
+                    <td>@rating.review</td>
+                    <td>
+                        <button class="btn btn-danger" @onclick="() => DeleteRating(rating.rating_id)">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No ratings available.</p>
+}
+
+@code {
+    private List<Rating> ratings = new List<Rating>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetRatings();
+    }
+
+    private async Task GetRatings()
+    {
+        try
+        {
+            var response = await Http.GetAsync("https://localhost:7167/api/Rating/GetRatings");
+            if (response.IsSuccessStatusCode)
+            {
+                ratings = await response.Content.ReadFromJsonAsync<List<Rating>>();
+            }
+            else
+            {
+                Console.WriteLine($"Error fetching ratings: {response.ReasonPhrase}");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error fetching ratings: {ex.Message}");
+        }
+    }
+
+    private async Task DeleteRating(int ratingId)
+    {
+        try
+        {
+            var response = await Http.DeleteAsync($"https://localhost:7167/api/Rating/DeleteRating/{ratingId}");
+            if (response.IsSuccessStatusCode)
+            {
+                // Remove the deleted rating from the list without reloading
+                ratings = ratings.Where(r => r.rating_id != ratingId).ToList();
+            }
+            else
+            {
+                Console.WriteLine("Error deleting rating.");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error deleting rating: {ex.Message}");
+        }
+    }
+}

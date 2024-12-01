@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookTradingHub.WebAPI.Migrations
 {
     [DbContext(typeof(ApplicationDB))]
-    [Migration("20241201131745_new")]
-    partial class @new
+    [Migration("20241201144735_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -71,7 +71,10 @@ namespace BookTradingHub.WebAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("book_id")
+                    b.Property<int>("book_Id")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("book_Id1")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("review")
@@ -81,9 +84,14 @@ namespace BookTradingHub.WebAPI.Migrations
                     b.Property<int>("stars")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("title")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("rating_id");
 
-                    b.HasIndex("book_id");
+                    b.HasIndex("book_Id");
+
+                    b.HasIndex("book_Id1");
 
                     b.ToTable("Ratings");
                 });
@@ -120,9 +128,17 @@ namespace BookTradingHub.WebAPI.Migrations
                 {
                     b.HasOne("BookTradingHub.WebAPI.Models.Book", null)
                         .WithMany()
-                        .HasForeignKey("book_id")
+                        .HasForeignKey("book_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("BookTradingHub.WebAPI.Models.Book", "Book")
+                        .WithMany()
+                        .HasForeignKey("book_Id1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Book");
                 });
 #pragma warning restore 612, 618
         }

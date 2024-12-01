@@ -23,7 +23,7 @@ public async Task<IActionResult> AddRating([FromBody] Rating rating)
         return BadRequest("Rating must be between 1 and 5");
 
     // Check if the book exists
-    var book = await _context.Books.FindAsync(rating.book_id);
+    var book = await _context.Books.FindAsync(rating.book_Id);
     if (book == null)
         return NotFound("Book not found");
 
@@ -35,7 +35,7 @@ public async Task<IActionResult> AddRating([FromBody] Rating rating)
     await _context.SaveChangesAsync();
 
     // Optionally update the book's average rating
-    var ratingsForBook = _context.Ratings.Where(r => r.book_id == book.book_Id);
+    var ratingsForBook = _context.Ratings.Where(r => r.book_Id == book.book_Id);
     if (ratingsForBook.Any())
     {
         // Recalculate the average rating for the book
@@ -56,7 +56,7 @@ public async Task<IActionResult> AddRating([FromBody] Rating rating)
 {
     // Fetch all ratings for the given book
     var ratingsForBook = await _context.Ratings
-        .Where(r => r.book_id == bookId)
+        .Where(r => r.book_Id == bookId)
         .ToListAsync();  // ToListAsync requires Microsoft.EntityFrameworkCore
 
     // Recalculate the average rating
@@ -82,8 +82,63 @@ public async Task<IActionResult> AddRating([FromBody] Rating rating)
             await _context.SaveChangesAsync();
         }
     }
-}        }
+}       
+[HttpGet("GetRatingsForBook/{bookId}")]
+public async Task<IActionResult> GetRatingsForBook(int bookId)
+{
+    // Fetch all ratings for the given book
+    var ratings = await _context.Ratings
+        .Where(r => r.book_Id == bookId)
+        .ToListAsync();
+    
+    if (ratings == null || ratings.Count == 0)
+    {
+        return NotFound("No ratings found for this book.");
     }
+
+    return Ok(ratings);
+}
+
+  [HttpDelete("DeleteRating/{id}")]
+        public async Task<IActionResult> DeleteRating(int id)
+        {
+            var rating = await _context.Ratings.FindAsync(id);
+            if (rating == null)
+            {
+                return NotFound("Rating not found");
+            }
+
+            _context.Ratings.Remove(rating);
+            await _context.SaveChangesAsync();
+
+            return Ok("Rating deleted successfully");
+        }
+
+       [HttpGet("GetRatings")]
+public async Task<ActionResult<List<Rating>>> GetRatings()
+{
+    try
+    {
+        var ratings = await _context.Ratings
+            .Include(r => r.Book)  // Make sure the Book details are included
+            .ToListAsync();
+
+        return Ok(ratings);
+    }
+    catch (Exception ex)
+    {
+        // Log the exception for debugging purposes
+        Console.WriteLine($"Error fetching ratings: {ex.Message}");
+        return StatusCode(500, "Internal server error");
+    }
+}
+    }
+}
+
+ 
+
+
+
 
 
 

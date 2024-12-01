@@ -68,7 +68,7 @@ namespace BookTradingHub.WebAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("book_id")
+                    b.Property<int>("book_Id")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("review")
@@ -79,12 +79,11 @@ namespace BookTradingHub.WebAPI.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("title")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("rating_id");
 
-                    b.HasIndex("book_id");
+                    b.HasIndex("book_Id");
 
                     b.ToTable("Ratings");
                 });
@@ -119,11 +118,13 @@ namespace BookTradingHub.WebAPI.Migrations
 
             modelBuilder.Entity("BookTradingHub.WebAPI.Models.Rating", b =>
                 {
-                    b.HasOne("BookTradingHub.WebAPI.Models.Book", null)
+                    b.HasOne("BookTradingHub.WebAPI.Models.Book", "Book")
                         .WithMany()
-                        .HasForeignKey("book_id")
+                        .HasForeignKey("book_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Book");
                 });
 #pragma warning restore 612, 618
         }

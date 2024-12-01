@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BookTradingHub.WebAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class New : Migration
+    public partial class @new : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -54,7 +54,9 @@ namespace BookTradingHub.WebAPI.Migrations
                 {
                     rating_id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    book_id = table.Column<int>(type: "INTEGER", nullable: false),
+                    book_Id = table.Column<int>(type: "INTEGER", nullable: false),
+                    book_Id1 = table.Column<int>(type: "INTEGER", nullable: false),
+                    title = table.Column<string>(type: "TEXT", nullable: true),
                     stars = table.Column<int>(type: "INTEGER", nullable: false),
                     review = table.Column<string>(type: "TEXT", nullable: false)
                 },
@@ -62,17 +64,28 @@ namespace BookTradingHub.WebAPI.Migrations
                 {
                     table.PrimaryKey("PK_Ratings", x => x.rating_id);
                     table.ForeignKey(
-                        name: "FK_Ratings_Books_book_id",
-                        column: x => x.book_id,
+                        name: "FK_Ratings_Books_book_Id",
+                        column: x => x.book_Id,
+                        principalTable: "Books",
+                        principalColumn: "book_Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Ratings_Books_book_Id1",
+                        column: x => x.book_Id1,
                         principalTable: "Books",
                         principalColumn: "book_Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Ratings_book_id",
+                name: "IX_Ratings_book_Id",
                 table: "Ratings",
-                column: "book_id");
+                column: "book_Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Ratings_book_Id1",
+                table: "Ratings",
+                column: "book_Id1");
         }
 
         /// <inheritdoc />

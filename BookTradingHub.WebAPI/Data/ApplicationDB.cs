@@ -16,12 +16,12 @@ namespace BookTradingHub.Database.Data
             base.OnModelCreating(modelBuilder);
 
         // Define the relationship using the foreign key 'book_id'
-            modelBuilder.Entity<Rating>()
-                .HasOne<Book>()  // We're referencing the Book entity
-                .WithMany()  // A book can have many ratings
-                .HasForeignKey(r => r.book_id)  // Foreign key on Rating
-                .OnDelete(DeleteBehavior.Cascade);
-    
+           modelBuilder.Entity<Rating>()
+                .HasOne(r => r.Book)   // Each Rating has one Book
+                .WithMany()            // A Book can have many Ratings (if this relationship is correct)
+                .HasForeignKey(r => r.book_Id) // The foreign key is `book_Id`
+                .OnDelete(DeleteBehavior.Cascade); // Define the delete behavior (optional)
+        
         modelBuilder.Entity<User>()
             .Property(u => u.username)
             .HasMaxLength(100);

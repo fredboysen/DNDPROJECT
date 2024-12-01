@@ -9,7 +9,7 @@
 
     <div class="form-group">
         <label for="bookName">Select Book</label>
-        <select id="bookName" class="form-control" @bind="rating.book_id">
+        <select id="bookName" class="form-control" @bind="rating.book_Id">
             <option value="">-- Select a Book --</option>
             @if (Books != null)
             {
@@ -67,7 +67,7 @@
         Message = string.Empty;
 
         // Basic validation
-        if (rating.book_id == 0 || rating.stars < 1 || rating.stars > 5 || string.IsNullOrWhiteSpace(rating.review))
+        if (rating.book_Id == 0 || rating.stars < 1 || rating.stars > 5 || string.IsNullOrWhiteSpace(rating.review))
         {
             Message = "All fields are required, and rating must be between 1 and 5.";
             return;
