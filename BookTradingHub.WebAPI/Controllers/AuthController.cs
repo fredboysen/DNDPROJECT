@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using BookTradingHub.Database.Data; // Namespace for ApplicationDB context
-using BookTradingHub.WebAPI.Models; // Namespace for Book model
+using BookTradingHub.Database.Data; 
+using BookTradingHub.WebAPI.Models;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -90,7 +90,7 @@ private readonly ApplicationDB _context;
         new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
         new Claim(ClaimTypes.Name, user.username),
         new Claim(ClaimTypes.NameIdentifier, user.user_id.ToString()),
-        new Claim(ClaimTypes.Role, user.role), // Use ClaimTypes.Role for consistency.
+        new Claim(ClaimTypes.Role, user.role),
     };
     return claims.ToList();
 }

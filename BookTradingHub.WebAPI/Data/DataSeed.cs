@@ -90,6 +90,7 @@ namespace BookTradingHub.Database.Data
             context.Books.AddRange(books);
             context.SaveChanges();
 
+        
             var ratings = books.Select((book, index) => new Rating
             {
                 book_Id = book.book_Id,
@@ -97,6 +98,8 @@ namespace BookTradingHub.Database.Data
                 stars = 3 + (index % 3),
                 review = $"This is an amazing book by {book.author}."
             }).ToArray();
+
+
 
             context.Ratings.AddRange(ratings);
             context.SaveChanges();
