@@ -3,6 +3,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -232,6 +233,146 @@ label{
     gap: 10px; 
 }
 
-
 /* ------------------------------------------------------------------------------------*/
+<<<<<<< HEAD
+
+/* Login styling */
+
+
+body {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+
+/* Container Styling */
+.container {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  width: 1000px;
+  max-width: 100%; /* Ensure container doesn't exceed the viewport width */
+  min-height: 480px; /* Set minimum height for the container */
+}
+
+/* Container Paragraph Styling */
+.container p {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  margin: 20px 0;
+}
+
+/* Container Span Styling */
+.container span {
+  font-size: 12px;
+}
+
+/* Container Link Styling */
+.container a {
+  color: #333;
+  font-size: 13px;
+  text-decoration: none;
+  margin: 15px 0 10px;
+}
+
+/* Container Button Styling */
+.container button {
+  background-color: #fede37;
+  color: #070606;
+  font-size: 12px;
+  padding: 10px 45px;
+  border: 1px solid black;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* Hidden Button Styling */
+.container button.hidden {
+  background-color: transparent;
+  border-color: rgb(0, 0, 0);
+}
+
+/* Container Form Styling */
+.container form {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  height: 100%;
+}
+
+.container input{
+  background-color: #eee;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 2px;
+  width: 100%;
+  outline: none;
+}
+
+/* Form Container Styling */
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+/* Sign-in Styling */
+.sign-in {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+/* Sign-up Styling */
+.sign-up {
+  left: 0;
+  width: 50%;
+}
+
+/* Active Sign-up Styling */
+.container.active .sign-up {
+  transform: translateX(100%);
+  animation: move 0.6s;
+}
+
+/* Container Select Styling */
+.container select {
+  background-color: #eee;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+
+/* Focus Styling for Select Elements */
+.container select:focus {
+  outline: none;
+  border: 1px solid #fdda00; /* Add focus styling if needed */
+}
+
+.col-md-6 h3{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+=======
 /* Login.css 
+>>>>>>> d7a30539aa275d43e81eb4466b3e65ba3665fb77
