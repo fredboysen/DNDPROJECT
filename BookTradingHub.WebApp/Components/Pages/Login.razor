@@ -4,7 +4,6 @@
 @using BookTradingHub.WebAPI.Models
 @inject HttpClient Http
 @inject NavigationManager navMgr
-
 @inject IAuthService authService
 @inject NavigationManager Navigation
 
@@ -36,7 +35,6 @@
             </div>
         </div>
 
-        <!-- Registration Section -->
         <div class="col-md-6 card">
             <h3>Register</h3>
             <div class="field">
@@ -78,12 +76,11 @@
 </div>
 
 @code {
-    // Login fields
     private string loginUsername = "";
     private string loginPassword = "";
     private string loginErrorLabel = "";
 private string registrationErrorMessage = "";   
-    private string registrationSuccessMessage = ""; // New field
+    private string registrationSuccessMessage = "";
 
     private async Task LoginAsync()
     {

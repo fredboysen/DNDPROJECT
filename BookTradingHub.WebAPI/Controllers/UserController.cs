@@ -56,5 +56,22 @@ public async Task<IActionResult> Register(User user)
     }
     
 
+    [HttpGet]
+[Route("api/user")]
+public IActionResult GetUserFromToken()
+{
+    var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "user_Id");
+    if (userIdClaim == null)
+        return Unauthorized("User ID not found in token");
+
+    var userId = int.Parse(userIdClaim.Value);
+    var user = _context.Users.Find(userId);
+
+    if (user == null)
+        return NotFound("User not found");
+
+    return Ok(new { user.user_id, user.username });
+}
+
 }
 }
