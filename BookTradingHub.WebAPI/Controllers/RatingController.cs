@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using BookTradingHub.WebAPI.Models;
+using Microsoft.EntityFrameworkCore;
 using BookTradingHub.Database.Data;
 
 namespace BookTradingHub.WebAPI.Controllers
@@ -51,6 +52,40 @@ public async Task<IActionResult> AddRating([FromBody] Rating rating)
     return Ok($"Rating for '{book.title}' added successfully!");
 }
 
-}
-}
+ private async Task UpdateAverageRating(int bookId)
+{
+    // Fetch all ratings for the given book
+    var ratingsForBook = await _context.Ratings
+        .Where(r => r.book_id == bookId)
+        .ToListAsync();  // ToListAsync requires Microsoft.EntityFrameworkCore
+
+    // Recalculate the average rating
+    if (ratingsForBook.Any())
+    {
+        // Calculate the average and round to 2 decimal places
+        var average = ratingsForBook.Average(r => r.stars);
+        var roundedAverage = Math.Round(average, 2);  // Round to 2 decimal places
+
+        var book = await _context.Books.FindAsync(bookId);
+        if (book != null)
+        {
+            book.averageRating = roundedAverage;  // Update the average rating in the book table
+            await _context.SaveChangesAsync();
+        }
+    }
+    else
+    {
+        var book = await _context.Books.FindAsync(bookId);
+        if (book != null)
+        {
+            book.averageRating = 0.0;  // No ratings yet, set default to 0
+            await _context.SaveChangesAsync();
+        }
+    }
+}        }
+    }
+
+
+
+
 
