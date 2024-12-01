@@ -234,7 +234,6 @@ label{
 }
 
 /* ------------------------------------------------------------------------------------*/
-<<<<<<< HEAD
 
 /* Login styling */
 
@@ -373,6 +372,11 @@ body {
     padding-bottom: 20px;
     font-weight: bold;
 }
-=======
-/* Login.css 
->>>>>>> d7a30539aa275d43e81eb4466b3e65ba3665fb77
+
+
+/* ------------------------------------------------------------------------------------*/
+/* View Ratings styling (Ratinglist.razor) */
+
+.rating-review{
+    font-style: italic;
+}

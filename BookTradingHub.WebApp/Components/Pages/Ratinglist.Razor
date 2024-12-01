@@ -18,18 +18,18 @@
         <tbody>
             @foreach (var rating in ratings)
             {
-                <tr>
-                    <td>@rating.title</td>
-                    <td>@rating.stars</td>
-                    <td>@rating.review</td>
-                    <td>
-                        <button class="btn btn-danger" @onclick="() => DeleteRating(rating.rating_id)">
-                            Delete
-                        </button>
-                    </td>
-                </tr>
-            }
-        </tbody>
+            <tr>
+            <td class="rating-title">@rating.title</td>
+            <td class="rating-stars">@rating.stars</td>
+            <td class="rating-review">@rating.review</td>
+            <td>
+                <button class="btn btn-danger" @onclick="() => DeleteRating(rating.rating_id)">
+                    Delete
+                </button>
+            </td>
+        </tr>
+    }
+</tbody>
     </table>
 }
 else

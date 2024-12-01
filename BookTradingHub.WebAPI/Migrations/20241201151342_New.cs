@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BookTradingHub.WebAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class @new : Migration
+    public partial class New : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -55,7 +55,6 @@ namespace BookTradingHub.WebAPI.Migrations
                     rating_id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     book_Id = table.Column<int>(type: "INTEGER", nullable: false),
-                    book_Id1 = table.Column<int>(type: "INTEGER", nullable: false),
                     title = table.Column<string>(type: "TEXT", nullable: true),
                     stars = table.Column<int>(type: "INTEGER", nullable: false),
                     review = table.Column<string>(type: "TEXT", nullable: false)
@@ -69,23 +68,12 @@ namespace BookTradingHub.WebAPI.Migrations
                         principalTable: "Books",
                         principalColumn: "book_Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Ratings_Books_book_Id1",
-                        column: x => x.book_Id1,
-                        principalTable: "Books",
-                        principalColumn: "book_Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Ratings_book_Id",
                 table: "Ratings",
                 column: "book_Id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Ratings_book_Id1",
-                table: "Ratings",
-                column: "book_Id1");
         }
 
         /// <inheritdoc />
