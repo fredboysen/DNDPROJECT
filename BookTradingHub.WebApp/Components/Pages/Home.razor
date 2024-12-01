@@ -19,19 +19,19 @@
     {
         @foreach (var book in Books)
         {
-            <NavLink class="book-card" id="@($"book-{book.book_Id}")" href="@($"/newrating/{book.book_Id}")">
-                <img src="@book.ImageUrl" alt="@book.title" class="book-image" />
-                <div class="book-details">
-                    <h3 class="book-title">@book.title</h3>
-                    <p class="book-author">Author: @book.author</p>
-                    <p class="book-isbn">ISBN: @book.isbn</p>
-                    <p class="book-genre">Genre: @book.genre</p>
-                    <p class="book-publisher">Publisher: @book.publisher</p>
-                    <p class="book-publish-date">Published: @book.publish_Date.ToShortDateString()</p>
-                    <p class="book-condition">Condition: @book.condition</p>
-                    <p class="@GetRatingClass(book.averageRating)">Rating: @book.averageRating</p>
-                </div>
-            </NavLink>
+           <NavLink class="book-card" id="@($"book-{book.book_Id}")" href="@($"/newrating/{book.book_Id}")">
+    <img src="@book.ImageUrl" alt="@book.title" class="book-image" />
+    <div class="book-details">
+        <h3 class="book-title">@book.title</h3>
+        <p class="book-author">Author: @book.author</p>
+        <p class="book-isbn">ISBN: @book.isbn</p>
+        <p class="book-genre">Genre: @book.genre</p>
+        <p class="book-publisher">Publisher: @book.publisher</p>
+        <p class="book-publish-date">Published: @book.publish_Date.ToShortDateString()</p>
+        <p class="book-condition">Condition: @book.condition</p>
+        <p class="@GetRatingClass(book.averageRating)">Rating: @book.averageRating</p>
+    </div>
+</NavLink>
         }
     }
 </div>

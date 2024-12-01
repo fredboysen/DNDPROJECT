@@ -1,3 +1,4 @@
+@page "/newrating/{bookId:int}"
 @page "/newrating"
 @inject HttpClient Http
 
@@ -15,7 +16,9 @@
             {
                 @foreach (var book in Books)
                 {
-                    <option value="@book.book_Id">@book.title</option>
+                    <option value="@book.book_Id" selected="@(book.book_Id == rating.book_Id ? true : false)">
+                        @book.title
+                    </option>
                 }
             }
         </select>
@@ -45,6 +48,8 @@
 }
 
 @code {
+    [Parameter] public int bookId { get; set; }  // Capture the bookId from the URL
+    
     private List<Book> Books = new();
     private Rating rating = new();
     private string Message;
@@ -55,6 +60,9 @@
         {
             // Fetch books from the API
             Books = await Http.GetFromJsonAsync<List<Book>>("https://localhost:7167/api/books");
+
+            // Pre-select the book based on the bookId from the URL
+            rating.book_Id = bookId;  // Set the bookId to the rating model
         }
         catch (Exception ex)
         {

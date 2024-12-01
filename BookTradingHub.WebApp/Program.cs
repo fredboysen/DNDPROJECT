@@ -3,6 +3,8 @@ using Blazored.LocalStorage;
 using BookTradingHub.WebAPI.Auth;
 using BookTradingHub.WebApp.Services.Http;
 using Microsoft.AspNetCore.Components.Authorization;
+using System.Security.Claims;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +17,11 @@ builder.Services.AddHttpClient("WebAPI", client =>
 // Add scoped HttpClient for dependency injection
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7167") });
 
-
+builder.Services.AddAuthorizationCore(options =>
+{
+    options.AddPolicy("Admin", policy =>
+        policy.RequireAuthenticatedUser().RequireClaim(ClaimTypes.Role, "Admin"));
+});
 builder.Services.AddAuthentication().AddCookie(options =>
 {
     options.LoginPath = "/login";
