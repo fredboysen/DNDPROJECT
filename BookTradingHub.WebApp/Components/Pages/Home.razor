@@ -4,7 +4,7 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Welcome to Book Trading Hub</h1>
+<h1 class="welcometext">Welcome to Book Rating Hub!</h1>
 
 <div class="books-container">
     @if (Books == null)
@@ -43,7 +43,6 @@
     {
         try
         {
-            // Replace with your actual API endpoint URL for fetching books.
             Books = await Http.GetFromJsonAsync<List<Book>>("https://localhost:7167/api/books"); 
         }
         catch (Exception ex)
@@ -54,7 +53,7 @@
 
     public class Book
     {
-        public int book_Id { get; set; } // Ensure correct property name matches the API response
+        public int book_Id { get; set; }
         public string title { get; set; } = "";
         public string author { get; set; } = "";
         public string isbn { get; set; }  = "";

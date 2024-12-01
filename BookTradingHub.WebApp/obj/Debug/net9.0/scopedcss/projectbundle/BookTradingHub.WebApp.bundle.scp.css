@@ -68,7 +68,7 @@ main[b-r3fbocw5im] {
     cursor: pointer;
     width: 3.5rem;
     height: 2.5rem;
-    color: #070606; /* Default text color (dark) */
+    color: #070606; 
     position: absolute;
     top: 0.5rem;
     right: 1rem;
@@ -79,7 +79,7 @@ main[b-r3fbocw5im] {
     background-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Navbar Scrollable Area */
+/* Navbar Scrollable Area - navbar is not actually scrollable, but namespace is kept for consistency purposes */
 .nav-scrollable[b-0c9fanig9z] {
     display: flex;
     justify-content: space-between;
@@ -105,12 +105,12 @@ main[b-r3fbocw5im] {
     padding-bottom: 0.5rem;
     font-weight: bold;
     padding-top: 1rem;
-    color: #070606; /* Default text color (dark) */
+    color: #070606;
 }
 
 /* Navbar Link Styling */
 .nav-item[b-0c9fanig9z]  .nav-link {
-    color: #070606; /* Dark text color */
+    color: #070606;
     background: none;
     border: none;
     border-radius: 4px;
@@ -129,8 +129,8 @@ main[b-r3fbocw5im] {
 
 /* Hover Effect for Links */
 .nav-item[b-0c9fanig9z]  .nav-link:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Slight greyish background on hover */
-    color: #7f7f7f; /* Greyish color on hover */
+    background-color: rgba(0, 0, 0, 0.1); /* Slight grey background on hover */
+    color: #000000;
 }
 
 /* Icon Styling */
@@ -144,7 +144,7 @@ main[b-r3fbocw5im] {
     background-size: contain;
 }
 
-/* Icon: House */
+/* Icons for navigation menu, converted to URLs */
 .bi-house-nav-menu[b-0c9fanig9z] {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='black' class='bi bi-house' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8 .5a1 1 0 0 1 .668.263l6 5.5A1 1 0 0 1 15 7.5V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7.5a1 1 0 0 1 .332-.737l6-5.5A1 1 0 0 1 8 .5ZM13 7.5 8 2.697 3 7.5V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V7.5ZM5 10a2 2 0 1 1 4 0 2 2 0 0 1-4 0Z'/%3E%3C/svg%3E");
 }

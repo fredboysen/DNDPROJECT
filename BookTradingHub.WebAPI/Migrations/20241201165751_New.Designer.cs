@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookTradingHub.WebAPI.Migrations
 {
     [DbContext(typeof(ApplicationDB))]
-    [Migration("20241201151342_New")]
+    [Migration("20241201165751_New")]
     partial class New
     {
         /// <inheritdoc />

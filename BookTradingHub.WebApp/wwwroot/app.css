@@ -130,6 +130,7 @@ h1:focus {
     margin-bottom: 5px;
 }
 
+/* Change color of average rating in home screen */
 .book-rating-green {
     font-weight: bold;
     color: #00ac33;
@@ -234,7 +235,6 @@ label{
 }
 
 /* ------------------------------------------------------------------------------------*/
-
 /* Login styling */
 
 
@@ -302,7 +302,7 @@ body {
 
 /* Container Form Styling */
 .container form {
-  background-color: #fff;
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -316,7 +316,7 @@ body {
   border: none;
   margin: 8px 0;
   padding: 10px 15px;
-  font-size: 13px;
+  font-size: 18px;
   border-radius: 2px;
   width: 100%;
   outline: none;
@@ -377,6 +377,16 @@ body {
 /* ------------------------------------------------------------------------------------*/
 /* View Ratings styling (Ratinglist.razor) */
 
+/* Make suree only description of rating is italized and has better proportions. */
 .rating-review{
     font-style: italic;
+    width: 1200px;
+    font-size: 14px;
 }
+
+.welcometext {
+    font-size: 3rem; 
+    font-weight: bold;
+    text-align: center;
+    color: #000000;
+  }

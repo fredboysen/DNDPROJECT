@@ -101,6 +101,7 @@ namespace BookTradingHub.Database.Data
             context.Ratings.AddRange(ratings);
             context.SaveChanges();
 
+
             var users = new[]
             {
                 new User

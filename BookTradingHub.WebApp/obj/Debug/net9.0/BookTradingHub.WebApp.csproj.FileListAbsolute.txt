@@ -433,16 +433,9 @@ C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\refint\BookTrad
 C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTradingHub.WebApp.pdb
 C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTradingHub.WebApp.genruntimeconfig.cache
 C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\ref\BookTradingHub.WebApp.dll
-<<<<<<< HEAD
 C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\mnoe22e8td-frknt79rva.gz
-C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTradingHub.WebApp.csproj.AssemblyReference.cache
-C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTradingHub.WebApp.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTradingHub.WebApp.AssemblyInfoInputs.cache
-C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTradingHub.WebApp.AssemblyInfo.cs
-C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTradingHub.WebApp.csproj.CoreCompileInputs.cache
-C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTradingHub.WebApp.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTradingHub.WebApp.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTradingHub.WebApp.sourcelink.json
+C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\mnoe22e8td-7m04wmn6wu.gz
+>>>>>>> 1c53161f1b59aa676638c32599453495dc7614bb
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\bin\Debug\net9.0\BookTradingHub.WebAPI.deps.json
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\bin\Debug\net9.0\BookTradingHub.WebAPI.runtimeconfig.json
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\bin\Debug\net9.0\BookTradingHub.WebAPI.staticwebassets.endpoints.json
@@ -532,11 +525,18 @@ C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJEC
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\bin\Debug\net9.0\BookTradingHub.WebAPI.dll
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\bin\Debug\net9.0\BookTradingHub.WebAPI.pdb
+C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTradingHub.WebApp.csproj.AssemblyReference.cache
+C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTradingHub.WebApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTradingHub.WebApp.AssemblyInfoInputs.cache
+C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTradingHub.WebApp.AssemblyInfo.cs
+C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTradingHub.WebApp.csproj.CoreCompileInputs.cache
+C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTradingHub.WebApp.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTradingHub.WebApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTradingHub.WebApp.sourcelink.json
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\scopedcss\bundle\BookTradingHub.WebApp.styles.css
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\scopedcss\projectbundle\BookTradingHub.WebApp.bundle.scp.css
-C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\mnoe22e8td-7m04wmn6wu.gz
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\v6rybddqq4-t1cqhe9u97.gz
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\3jkeusdha3-c2jlpeoesf.gz
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\g0ao55r8jz-sejl45xvog.gz
@@ -581,9 +581,6 @@ C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJEC
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\c7er13btv3-h1s4sie4z3.gz
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\n3f7ea9qce-4d85u1mtcx.gz
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\u20lkif674-0j3bgjxly4.gz
-C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\w36wsnte3j-suw3l29il4.gz
-C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\w8f4a5lrzq-eprklz014l.gz
-C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\givpizgkwc-eprklz014l.gz
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\staticwebassets.build.endpoints.json
@@ -599,6 +596,6 @@ C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJEC
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTradingHub.WebApp.pdb
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTradingHub.WebApp.genruntimeconfig.cache
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\ref\BookTradingHub.WebApp.dll
-=======
-C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\mnoe22e8td-7m04wmn6wu.gz
->>>>>>> 1c53161f1b59aa676638c32599453495dc7614bb
+C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\mnoe22e8td-c550u7ljjh.gz
+C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\w8f4a5lrzq-qxln2nlhw4.gz
+C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\givpizgkwc-qxln2nlhw4.gz
