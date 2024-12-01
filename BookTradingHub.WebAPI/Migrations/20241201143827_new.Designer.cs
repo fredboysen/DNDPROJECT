@@ -3,6 +3,7 @@ using System;
 using BookTradingHub.Database.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookTradingHub.WebAPI.Migrations
 {
     [DbContext(typeof(ApplicationDB))]
-    partial class ApplicationDBModelSnapshot : ModelSnapshot
+    [Migration("20241201143827_new")]
+    partial class @new
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.0");
@@ -71,6 +74,9 @@ namespace BookTradingHub.WebAPI.Migrations
                     b.Property<int>("book_Id")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("book_Id1")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("review")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -84,6 +90,8 @@ namespace BookTradingHub.WebAPI.Migrations
                     b.HasKey("rating_id");
 
                     b.HasIndex("book_Id");
+
+                    b.HasIndex("book_Id1");
 
                     b.ToTable("Ratings");
                 });
@@ -118,9 +126,15 @@ namespace BookTradingHub.WebAPI.Migrations
 
             modelBuilder.Entity("BookTradingHub.WebAPI.Models.Rating", b =>
                 {
-                    b.HasOne("BookTradingHub.WebAPI.Models.Book", "Book")
+                    b.HasOne("BookTradingHub.WebAPI.Models.Book", null)
                         .WithMany()
                         .HasForeignKey("book_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BookTradingHub.WebAPI.Models.Book", "Book")
+                        .WithMany()
+                        .HasForeignKey("book_Id1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

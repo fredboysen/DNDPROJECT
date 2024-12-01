@@ -31,6 +31,8 @@ builder.Services.AddCors(options =>
     });
 });
 
+
+
 builder.Services.AddScoped<IAuthService, AuthService>();
 
 // Register DbContext with SQLite

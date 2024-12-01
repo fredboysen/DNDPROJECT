@@ -76,7 +76,7 @@ namespace BookTradingHub.WebApp.Services.Http
     {
         string userAsJson = JsonSerializer.Serialize(user);
         StringContent content = new(userAsJson, Encoding.UTF8, "application/json");
-        HttpResponseMessage response = await client.PostAsync("http://localhost:5124/auth/register", content);
+        HttpResponseMessage response = await client.PostAsync("http://localhost:7167/auth/register", content);
         string responseContent = await response.Content.ReadAsStringAsync();
 
         if (!response.IsSuccessStatusCode)
@@ -113,6 +113,7 @@ namespace BookTradingHub.WebApp.Services.Http
 
         return Convert.FromBase64String(base64);
     }
+
 
     private async Task<string?> GetTokenFromCacheAsync()
     {

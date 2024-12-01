@@ -1,16 +1,19 @@
 @page "/newrating"
 @inject HttpClient Http
+<<<<<<< HEAD
 @rendermode InteractiveServer /* This is INSANELY important for the actual slider-value-box to update dynamically.. 6 hours down the drain :-) Why is this not a standard implementation?? */
+=======
+>>>>>>> d7a30539aa275d43e81eb4466b3e65ba3665fb77
 
 <h3>Add New Rating</h3>
 
-<EditForm Model="@ratingModel" OnValidSubmit="@AddRating">
+<EditForm Model="@rating" OnValidSubmit="@AddRating">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
     <div class="form-group">
         <label for="bookName">Select Book</label>
-        <select id="bookName" class="form-control" @bind="ratingModel.BookId">
+        <select id="bookName" class="form-control" @bind="rating.book_Id">
             <option value="">-- Select a Book --</option>
             @if (Books != null)
             {
@@ -21,20 +24,20 @@
             }
         </select>
     </div>
-    
+
     <div class="form-group star-container">
         <label for="starRating">Rating</label>
         <div class="slider-wrapper">
-            <input type="range" id="starRating" class="form-control" @bind="ratingModel.StarRating" min="1" max="5" @oninput="UpdateValue" />
+            <input type="range" id="starRating" class="form-control" @bind="rating.stars" min="1" max="5" />
             <div class="slider-value-box">
-                @ratingModel.StarRating
+                @rating.stars
             </div>
         </div>
     </div>
 
     <div class="form-group">
         <label for="description">Description</label>
-        <textarea id="description-container" class="form-control" @bind="ratingModel.Description"></textarea>
+        <textarea id="description-container" class="form-control" @bind="rating.review"></textarea>
     </div>
 
     <button class="btn btn-primary">Add</button>
@@ -46,42 +49,44 @@
 }
 
 @code {
-    private List<Book> Books = new(); 
-    private RatingModel ratingModel = new(); 
+    private List<Book> Books = new();
+    private Rating rating = new();
     private string Message;
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
+            // Fetch books from the API
             Books = await Http.GetFromJsonAsync<List<Book>>("https://localhost:7167/api/books");
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error fetching books: {ex.Message}");
+            Console.WriteLine($"Error: {ex.Message}");
         }
     }
 
     private async Task AddRating()
     {
-        Message = "Rating added successfully!";
-    }
+        Message = string.Empty;
 
-    private void UpdateValue(ChangeEventArgs e)
-    {
-        ratingModel.StarRating = int.Parse(e.Value.ToString());
-    }
+        // Basic validation
+        if (rating.book_Id == 0 || rating.stars < 1 || rating.stars > 5 || string.IsNullOrWhiteSpace(rating.review))
+        {
+            Message = "All fields are required, and rating must be between 1 and 5.";
+            return;
+        }
 
-    public class RatingModel
-    {
-        public int BookId { get; set; }  
-        public int StarRating { get; set; } = 1; 
-        public string Description { get; set; }  
-    }
-
-    private class Book
-    {
-        public int book_Id { get; set; }
-        public string title { get; set; }
+        // Post the rating to the API
+        var response = await Http.PostAsJsonAsync("https://localhost:7167/api/Rating/AddRating", rating);
+        if (response.IsSuccessStatusCode)
+        {
+            Message = "Rating added successfully!";
+        }
+        else
+        {
+            var error = await response.Content.ReadAsStringAsync();
+            Message = $"Error: {error}";
+        }
     }
 }
