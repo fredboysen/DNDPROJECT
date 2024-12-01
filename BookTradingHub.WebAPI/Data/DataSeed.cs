@@ -74,14 +74,14 @@ namespace BookTradingHub.Database.Data
                     username = "testuser",
                     email = "testuser@example.com",
                     role = "user",
-                    password = "test123"  // Make sure password is stored as plain text or use a hash
+                    password = "test123"
                 },
                 new User
                 {
                     username = "testadmin",
                     email = "testadmin@example.com",
                     role = "admin",
-                    password = "test123"  // Same note as above for password handling
+                    password = "test123"
                 }
             };
 

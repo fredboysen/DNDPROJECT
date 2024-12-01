@@ -568,5 +568,4 @@ C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\staticwebassets
 C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTrad.482A09D1.Up2Date
 C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\BookTradingHub.WebApp.genruntimeconfig.cache
 C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\ref\BookTradingHub.WebApp.dll
-C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\w36wsnte3j-fc7n0s5l69.gz
-C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\eduskqjdog-svp1rp4ymt.gz
+C:\Users\frebo\DNDPROJECT\BookTradingHub.WebApp\obj\Debug\net9.0\compressed\w36wsnte3j-suw3l29il4.gz

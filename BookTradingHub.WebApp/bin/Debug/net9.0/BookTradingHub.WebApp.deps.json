@@ -9,7 +9,8 @@
       "BookTradingHub.WebApp/1.0.0": {
         "dependencies": {
           "Blazored.LocalStorage": "4.5.0",
-          "BookTradingHub.WebAPI": "1.0.0"
+          "BookTradingHub.WebAPI": "1.0.0",
+          "Microsoft.IdentityModel.Tokens": "8.2.1"
         },
         "runtime": {
           "BookTradingHub.WebApp.dll": {}

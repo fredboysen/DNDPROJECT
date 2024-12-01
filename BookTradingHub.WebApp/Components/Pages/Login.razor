@@ -1,67 +1,132 @@
 ﻿@page "/login"
-@inject HttpClient Http
-@inject NavigationManager NavigationManager
+@using BookTradingHub.WebApp.Services.Http
+@using BookTradingHub.WebAPI.Controllers
+@using BookTradingHub.WebAPI.Models
+@inject IAuthService authService
+@inject NavigationManager navMgr
 
-<PageTitle>Login</PageTitle>
+<link rel="stylesheet" href="Login.css">
 
-<h3>Login to Book Trading Hub</h3>
+<div class="container">
+    <div class="row">
+        <!-- Login Section -->
+        <div class="col-md-6 card">
+            <h3>Login</h3>
+            <div class="field">
+                <label>Username:</label>
+                <input type="text" @bind="loginUsername" />
+            </div>
+            <div class="field">
+                <label>Password:</label>
+                <input type="password" @bind="loginPassword" />
+            </div>
+            @if (!string.IsNullOrEmpty(loginErrorLabel))
+            {
+                <div class="field">
+                    <label style="color: red">
+                        @loginErrorLabel
+                    </label>
+                </div>
+            }
+            <div class="field">
+                <button class="loginbtn" @onclick="LoginAsync">Log in</button>
+            </div>
+        </div>
 
-<EditForm Model="@user" OnValidSubmit="HandleLoginSubmit" FormName="loginForm">
-    <div class="form-group">
-        <!-- Username input field -->
-        <InputText id="login-username" placeholder="Username" @bind-Value="user.username" class="form-control" />
+        <!-- Registration Section -->
+        <div class="col-md-6 card">
+            <h3>Register</h3>
+            <div class="field">
+                <label>Username:</label>
+                <input type="text" @bind="registerUsername" />
+            </div>
+            <div class="field">
+                <label>Password:</label>
+                <input type="password" @bind="registerPassword" />
+            </div>
+            <div class="field">
+                <label>Email:</label>
+                <input type="email" @bind="registerEmail" />
+            </div>
+            @if (!string.IsNullOrEmpty(registerErrorLabel))
+            {
+                <div class="field">
+                    <label style="color: red">
+                        @registerErrorLabel
+                    </label>
+                </div>
+            }
+            @if (!string.IsNullOrEmpty(successLabel))
+            {
+                <div class="field">
+                    <label style="color: green">
+                        @successLabel
+                    </label>
+                </div>
+            }
+            <div class="field">
+                <button class="registerbtn" @onclick="RegisterAsync">Register</button>
+            </div>
+        </div>
     </div>
-
-    <div class="form-group">
-        <!-- Password input field -->
-        <InputText type="password" id="login-password" placeholder="Password" @bind-Value="user.password" class="form-control" />
-    </div>
-
-    <button type="submit" class="btn btn-primary">Sign In</button>
-</EditForm>
-
-@if (!string.IsNullOrEmpty(errorMessage))
-{
-    <div class="alert alert-danger mt-2">
-        @errorMessage
-    </div>
-}
+</div>
 
 @code {
-    private User user = new User();
-    private string errorMessage;
+    // Login fields
+    private string loginUsername = "";
+    private string loginPassword = "";
+    private string loginErrorLabel = "";
 
-    // Handle login form submission
-    private async Task HandleLoginSubmit()
+    // Registration fields
+    private string registerUsername = "";
+    private string registerPassword = "";
+    private string registerEmail = "";
+    private string registerErrorLabel = "";
+    private string successLabel = "";
+
+    private async Task LoginAsync()
     {
+        loginErrorLabel = "";
         try
         {
-            // Send login request to the backend API
-            var response = await Http.PostAsJsonAsync("https://localhost:7167/api/user", user);
-
-            if (response.IsSuccessStatusCode)
-            {
-                // Navigate to home page on successful login
-                NavigationManager.NavigateTo("/");
-            }
-            else
-            {
-                // Show error message on failure
-                errorMessage = "Invalid username or password.";
-            }
+            await authService.LoginAsync(loginUsername, loginPassword);
+            navMgr.NavigateTo("/");
         }
-        catch (Exception ex)
+        catch (Exception e)
         {
-            errorMessage = $"An error occurred: {ex.Message}";
+            Console.WriteLine($"Login failed: {e.Message}");
+            loginErrorLabel = $"Error: {e.Message}";
         }
     }
 
-    // Define User model with lowercase properties
-    public class User
+    private async Task RegisterAsync()
     {
-        public string username { get; set; }
-        public string password { get; set; }
-        public string email { get; set; }
-        public string role { get; set; } = "User"; // Default role
+        registerErrorLabel = "";
+        successLabel = "";
+
+        if (string.IsNullOrEmpty(registerUsername) || string.IsNullOrEmpty(registerPassword) || string.IsNullOrEmpty(registerEmail))
+        {
+            registerErrorLabel = "All fields are required.";
+            return;
+        }
+
+        try
+        {
+            var User = new User
+            {
+                username = registerUsername,
+                password = registerPassword,
+                email = registerEmail
+            };
+
+            await authService.RegisterAsync(User);
+            successLabel = "Registration successful! You can now log in.";
+            registerUsername = registerPassword = registerEmail = ""; // Clear fields
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Registration failed: {e.Message}");
+            registerErrorLabel = $"Error: {e.Message}";
+        }
     }
 }

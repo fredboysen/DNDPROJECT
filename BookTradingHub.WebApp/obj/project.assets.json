@@ -3662,7 +3662,8 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "Blazored.LocalStorage >= 4.5.0",
-      "BookTradingHub.WebAPI >= 1.0.0"
+      "BookTradingHub.WebAPI >= 1.0.0",
+      "microsoft.identitymodel.tokens >= 8.2.1"
     ]
   },
   "packageFolders": {
@@ -3715,6 +3716,10 @@
           "Blazored.LocalStorage": {
             "target": "Package",
             "version": "[4.5.0, )"
+          },
+          "microsoft.identitymodel.tokens": {
+            "target": "Package",
+            "version": "[8.2.1, )"
           }
         },
         "imports": [

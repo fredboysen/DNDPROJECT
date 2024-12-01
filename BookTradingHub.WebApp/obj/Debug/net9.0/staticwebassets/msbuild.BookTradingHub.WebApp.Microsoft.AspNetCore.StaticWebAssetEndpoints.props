@@ -627,26 +627,14 @@
     <StaticWebAssetEndpoint Include="_content/BookTradingHub.WebApp/Login.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Login.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-EfskMqHnqLLEC3YiOesvJ8/QWsral3tsEjqpa7o2Jlk="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"5311"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022EfskMqHnqLLEC3YiOesvJ8/QWsral3tsEjqpa7o2Jlk=\u0022"},{"Name":"Last-Modified","Value":"Fri, 29 Nov 2024 22:01:59 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-7Klg6/VWTTat\u002BplmWXHfh4VkvuLTVqo544n82BUaPbI="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4497"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00227Klg6/VWTTat\u002BplmWXHfh4VkvuLTVqo544n82BUaPbI=\u0022"},{"Name":"Last-Modified","Value":"Sun, 01 Dec 2024 03:42:51 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/BookTradingHub.WebApp/Login.fc7n0s5l69.css">
+    <StaticWebAssetEndpoint Include="_content/BookTradingHub.WebApp/Login.suw3l29il4.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Login.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"fc7n0s5l69"},{"Name":"integrity","Value":"sha256-EfskMqHnqLLEC3YiOesvJ8/QWsral3tsEjqpa7o2Jlk="},{"Name":"label","Value":"_content/BookTradingHub.WebApp/Login.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5311"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022EfskMqHnqLLEC3YiOesvJ8/QWsral3tsEjqpa7o2Jlk=\u0022"},{"Name":"Last-Modified","Value":"Fri, 29 Nov 2024 22:01:59 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/BookTradingHub.WebApp/Login.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Login.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-uAd2lyn4ybOMUuQUUBRYBVArDRIowx704LNQecCYp0c="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2767"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022uAd2lyn4ybOMUuQUUBRYBVArDRIowx704LNQecCYp0c=\u0022"},{"Name":"Last-Modified","Value":"Fri, 29 Nov 2024 22:02:07 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/BookTradingHub.WebApp/Login.svp1rp4ymt.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Login.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"svp1rp4ymt"},{"Name":"integrity","Value":"sha256-uAd2lyn4ybOMUuQUUBRYBVArDRIowx704LNQecCYp0c="},{"Name":"label","Value":"_content/BookTradingHub.WebApp/Login.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2767"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022uAd2lyn4ybOMUuQUUBRYBVArDRIowx704LNQecCYp0c=\u0022"},{"Name":"Last-Modified","Value":"Fri, 29 Nov 2024 22:02:07 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"suw3l29il4"},{"Name":"integrity","Value":"sha256-7Klg6/VWTTat\u002BplmWXHfh4VkvuLTVqo544n82BUaPbI="},{"Name":"label","Value":"_content/BookTradingHub.WebApp/Login.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4497"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00227Klg6/VWTTat\u002BplmWXHfh4VkvuLTVqo544n82BUaPbI=\u0022"},{"Name":"Last-Modified","Value":"Sun, 01 Dec 2024 03:42:51 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
   </ItemGroup>
 </Project>

@@ -948,29 +948,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>fc7n0s5l69</Fingerprint>
-      <Integrity>EfskMqHnqLLEC3YiOesvJ8/QWsral3tsEjqpa7o2Jlk=</Integrity>
+      <Fingerprint>suw3l29il4</Fingerprint>
+      <Integrity>7Klg6/VWTTat+plmWXHfh4VkvuLTVqo544n82BUaPbI=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Login.css'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Login.js'))">
-      <SourceType>Package</SourceType>
-      <SourceId>BookTradingHub.WebApp</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/BookTradingHub.WebApp</BasePath>
-      <RelativePath>Login.js</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>svp1rp4ymt</Fingerprint>
-      <Integrity>uAd2lyn4ybOMUuQUUBRYBVArDRIowx704LNQecCYp0c=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Login.js'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>
