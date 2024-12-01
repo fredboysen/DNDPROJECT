@@ -31,7 +31,7 @@ public class CustomAuthProvider : AuthenticationStateProvider
 
         public void NotifyAuthenticationStateChanged()
     {
-        // Get updated state and notify listeners
+       
         var authState = GetAuthenticationStateAsync();
         NotifyAuthenticationStateChanged(authState);
     }

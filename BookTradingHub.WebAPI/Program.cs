@@ -10,24 +10,24 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllers();  // Adds API controller services
-builder.Services.AddEndpointsApiExplorer();  // Adds support for generating API docs
+
+builder.Services.AddControllers();  
+builder.Services.AddEndpointsApiExplorer(); 
 builder.Services.AddSwaggerGen(c =>
 
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "BookTradingHub API", Version = "v1" });
 });
 
-// Add CORS policy to allow requests from your frontend (Blazor app).
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowBlazorApp", builder =>
     {
-        builder.WithOrigins("https://localhost:5169")  // Adjust to your Blazor app URL
+        builder.WithOrigins("https://localhost:5169")  
                .AllowAnyMethod()
                .AllowAnyHeader()
-               .AllowCredentials(); // Allow cookies and credentials if needed
+               .AllowCredentials(); 
     });
 });
 
@@ -63,45 +63,45 @@ builder.Services.AddAuthentication(options =>
 
 AuthorizationPolicies.AddPolicies(builder.Services);
 
-// Register Razor Components if needed
+
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();  // Enable Swagger in development
+    app.UseSwagger();  
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "BookTradingHub API v1");
-        c.RoutePrefix = string.Empty;  // Swagger UI at the root of the API
+        c.RoutePrefix = string.Empty;  
     });
 }
 
 app.UseCors(x => x
     .AllowAnyMethod()
     .AllowAnyHeader()
-    .SetIsOriginAllowed(origin => true) // allow any origin
+    .SetIsOriginAllowed(origin => true) 
     .AllowCredentials());
 
 // Seed database
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<ApplicationDB>();
-    DbSeeder.Seed(context);  // Call the seeding method
+    DbSeeder.Seed(context);  
 }
 
-app.UseHttpsRedirection();  // Ensure HTTP requests are redirected to HTTPS
+app.UseHttpsRedirection();  
 
-app.MapControllers();  // Map API controllers to routes
+app.MapControllers();  
 
 app.UseAuthentication();
 app.UseAuthorization();
 
 
-// Optional: Add static file support if needed
+
 app.MapStaticAssets();
 
 app.Run();

@@ -16,6 +16,6 @@ namespace BookTradingHub.WebAPI.Models
         public string password { get; set; } = string.Empty;
 
         public string email { get; set; } = string.Empty;
-        public string role { get; set; } = "User"; // Default role
+        public string role { get; set; } = "User";
     }
 }

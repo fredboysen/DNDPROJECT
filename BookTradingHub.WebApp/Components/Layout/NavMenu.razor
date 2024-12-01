@@ -26,13 +26,6 @@
             </NavLink>
         </div>
 
-<<<<<<< HEAD
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="/ratingslist">
-                <span class="bi bi-bookmark-check-nav-menu" aria-hidden="true"></span> View Ratings
-            </NavLink>
-        </div>
-=======
         @if (isAdmin)
         {
             <div class="nav-item px-3">
@@ -41,7 +34,6 @@
                 </NavLink>
             </div>
         }
->>>>>>> 1c53161f1b59aa676638c32599453495dc7614bb
 
         <div class="nav-item px-3">
             @if (isLoggedIn)
@@ -102,7 +94,7 @@
             isAdmin = false;
         }
 
-        StateHasChanged(); // Trigger UI update
+        StateHasChanged();
     }
 
     private async void OnAuthenticationStateChanged(Task<AuthenticationState> task)
