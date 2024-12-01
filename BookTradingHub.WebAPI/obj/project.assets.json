@@ -5276,19 +5276,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Thoma\\.nuget\\packages\\": {}
+    "C:\\Users\\frebo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\dndproject\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj",
       "projectName": "BookTradingHub.WebAPI",
-      "projectPath": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\dndproject\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj",
-      "packagesPath": "C:\\Users\\Thoma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\dndproject\\DNDPROJECT\\BookTradingHub.WebAPI\\obj\\",
+      "projectPath": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj",
+      "packagesPath": "C:\\Users\\frebo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Thoma\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\frebo\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"

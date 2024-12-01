@@ -83,21 +83,6 @@ public async Task<IActionResult> AddRating([FromBody] Rating rating)
         }
     }
 }       
-[HttpGet("GetRatingsForBook/{bookId}")]
-public async Task<IActionResult> GetRatingsForBook(int bookId)
-{
-    // Fetch all ratings for the given book
-    var ratings = await _context.Ratings
-        .Where(r => r.book_Id == bookId)
-        .ToListAsync();
-    
-    if (ratings == null || ratings.Count == 0)
-    {
-        return NotFound("No ratings found for this book.");
-    }
-
-    return Ok(ratings);
-}
 
   [HttpDelete("DeleteRating/{id}")]
         public async Task<IActionResult> DeleteRating(int id)
