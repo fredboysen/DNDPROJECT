@@ -15,6 +15,7 @@ builder.Services.AddHttpClient("WebAPI", client =>
 // Add scoped HttpClient for dependency injection
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7167") });
 
+
 builder.Services.AddAuthentication().AddCookie(options =>
 {
     options.LoginPath = "/login";

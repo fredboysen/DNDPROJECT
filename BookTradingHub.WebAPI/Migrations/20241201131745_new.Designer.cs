@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookTradingHub.WebAPI.Migrations
 {
     [DbContext(typeof(ApplicationDB))]
-    [Migration("20241130122028_fixedMigrationName")]
-    partial class fixedMigrationName
+    [Migration("20241201131745_new")]
+    partial class @new
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -81,14 +81,9 @@ namespace BookTradingHub.WebAPI.Migrations
                     b.Property<int>("stars")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("user_Id")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("rating_id");
 
                     b.HasIndex("book_id");
-
-                    b.HasIndex("user_Id");
 
                     b.ToTable("Ratings");
                 });
@@ -123,21 +118,11 @@ namespace BookTradingHub.WebAPI.Migrations
 
             modelBuilder.Entity("BookTradingHub.WebAPI.Models.Rating", b =>
                 {
-                    b.HasOne("BookTradingHub.WebAPI.Models.Book", "book")
+                    b.HasOne("BookTradingHub.WebAPI.Models.Book", null)
                         .WithMany()
                         .HasForeignKey("book_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("BookTradingHub.WebAPI.Models.User", "user")
-                        .WithMany()
-                        .HasForeignKey("user_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("book");
-
-                    b.Navigation("user");
                 });
 #pragma warning restore 612, 618
         }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BookTradingHub.WebAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class fixedMigrationName : Migration
+    public partial class New : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -54,7 +54,6 @@ namespace BookTradingHub.WebAPI.Migrations
                 {
                     rating_id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    user_Id = table.Column<int>(type: "INTEGER", nullable: false),
                     book_id = table.Column<int>(type: "INTEGER", nullable: false),
                     stars = table.Column<int>(type: "INTEGER", nullable: false),
                     review = table.Column<string>(type: "TEXT", nullable: false)
@@ -68,23 +67,12 @@ namespace BookTradingHub.WebAPI.Migrations
                         principalTable: "Books",
                         principalColumn: "book_Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Ratings_Users_user_Id",
-                        column: x => x.user_Id,
-                        principalTable: "Users",
-                        principalColumn: "user_id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Ratings_book_id",
                 table: "Ratings",
                 column: "book_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Ratings_user_Id",
-                table: "Ratings",
-                column: "user_Id");
         }
 
         /// <inheritdoc />
@@ -94,10 +82,10 @@ namespace BookTradingHub.WebAPI.Migrations
                 name: "Ratings");
 
             migrationBuilder.DropTable(
-                name: "Books");
+                name: "Users");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "Books");
         }
     }
 }

@@ -114,6 +114,7 @@ namespace BookTradingHub.WebApp.Services.Http
         return Convert.FromBase64String(base64);
     }
 
+
     private async Task<string?> GetTokenFromCacheAsync()
     {
         return await jsRuntime.InvokeAsync<string>("localStorage.getItem", "jwt");
