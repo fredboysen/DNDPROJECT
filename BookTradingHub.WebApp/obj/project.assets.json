@@ -3667,19 +3667,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\frebo\\.nuget\\packages\\": {}
+    "C:\\Users\\Thoma\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj",
+      "projectUniqueName": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\dndproject\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj",
       "projectName": "BookTradingHub.WebApp",
-      "projectPath": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj",
-      "packagesPath": "C:\\Users\\frebo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\obj\\",
+      "projectPath": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\dndproject\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj",
+      "packagesPath": "C:\\Users\\Thoma\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\dndproject\\DNDPROJECT\\BookTradingHub.WebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\frebo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Thoma\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -3691,8 +3691,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj": {
-              "projectPath": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj"
+            "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\dndproject\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj": {
+              "projectPath": "C:\\Users\\Thoma\\OneDrive\\Skrivebord\\dndproject\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj"
             }
           }
         }
@@ -3744,13 +3744,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
