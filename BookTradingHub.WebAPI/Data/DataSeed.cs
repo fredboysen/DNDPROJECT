@@ -1,4 +1,4 @@
-using BookTradingHub.WebAPI.Models; 
+using BookTradingHub.WebAPI.Models;
 using System;
 
 namespace BookTradingHub.Database.Data
@@ -7,12 +7,10 @@ namespace BookTradingHub.Database.Data
     {
         public static void Seed(ApplicationDB context)
         {
-            // Remove existing data
             context.Books.RemoveRange(context.Books);
-            context.Users.RemoveRange(context.Users); // Remove all users (for seeding)
-            context.Ratings.RemoveRange(context.Ratings); // Remove all ratings (for seeding)
+            context.Users.RemoveRange(context.Users);
+            context.Ratings.RemoveRange(context.Ratings);
 
-            // Seed new books
             var books = new[]
             {
                 new Book
@@ -89,62 +87,20 @@ namespace BookTradingHub.Database.Data
                 }
             };
 
-            // Add books and save
             context.Books.AddRange(books);
-            context.SaveChanges(); // Ensure books are inserted and book_ids are generated
+            context.SaveChanges();
 
-            // Seed new ratings
-            var ratings = new[]
+            var ratings = books.Select((book, index) => new Rating
             {
-                new Rating
-                {
-                    book_Id = books[0].book_Id, // Book 1
-                    title = "Amazing Read!",
-                    stars = 5,
-                    review = "I absolutely loved this book. It's so inspiring!"
-                },
-                new Rating
-                {
-                    book_Id = books[1].book_Id, // Book 2
-                    title = "Very informative",
-                    stars = 4,
-                    review = "The book provides insightful information, but could be more engaging."
-                },
-                new Rating
-                {
-                    book_Id = books[2].book_Id, // Book 3
-                    title = "Great memoir",
-                    stars = 4,
-                    review = "A very emotional and thought-provoking memoir."
-                },
-                new Rating
-                {
-                    book_Id = books[3].book_Id, // Book 4
-                    title = "Loved the fantasy elements",
-                    stars = 5,
-                    review = "The fantasy story was captivating, I couldn't put it down!"
-                },
-                new Rating
-                {
-                    book_Id = books[4].book_Id, // Book 5
-                    title = "Helpful",
-                    stars = 3,
-                    review = "An okay book, helpful but not as detailed as I expected."
-                },
-                new Rating
-                {
-                    book_Id = books[5].book_Id, // Book 6
-                    title = "Not for beginners",
-                    stars = 2,
-                    review = "I found this book hard to follow and not beginner-friendly."
-                }
-            };
+                book_Id = book.book_Id,
+                title = book.title,
+                stars = 3 + (index % 3),
+                review = $"This is an amazing book by {book.author}."
+            }).ToArray();
 
-            // Add ratings and save
             context.Ratings.AddRange(ratings);
-            context.SaveChanges(); // Ensure ratings are inserted after books are inserted
+            context.SaveChanges();
 
-            // Seed new users
             var users = new[]
             {
                 new User
@@ -163,9 +119,8 @@ namespace BookTradingHub.Database.Data
                 }
             };
 
-            // Add users and save
             context.Users.AddRange(users);
-            context.SaveChanges(); // Save users data
+            context.SaveChanges();
         }
     }
 }
