@@ -1,5 +1,5 @@
 #1 Project Domain and Why We Chose It (Revised)
-The project we’ve embarked on is called Book Trading Hub, a platform designed to bring book enthusiasts together in a community-focused environment. 
+The project we’ve embarked on is called Book Rating Hub, a platform designed to bring book enthusiasts together in a community-focused environment. 
 Originally envisioned as a system for trading books, we have since shifted our focus to creating a Book Rating Hub due to time constrains and more. 
 This platform now centers on allowing users to explore books, rate and comment on them, and share their experiences with others. 
 
