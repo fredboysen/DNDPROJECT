@@ -1,115 +1,214 @@
-#2 Design & Implementation
+# 3 Web Application
+## Describe how your key requirements are implemented in your web application. Provide code examples.
 
-Our project uses a RESTful API implemented with ASP.NET Core to manage books, ratings, and user authentication. The API adheres to REST conventions and standard HTTP methods, enabling seamless communication between the Blazor frontend and the backend.
-
-
-1. Books Management
-
-This endpoint retrieves a list of all books from the database:
-        [HttpGet]
-        public async Task<ActionResult<List<Book>>> GetBooks()
-        {
-            // The query to fetch all books from the Books table
-            var books = await _context.Books.ToListAsync();
-            return Ok(books);
-        }
-    }
-
-2. Rating System
-This endpoint allows users to add ratings for books, validates inputs, and updates the book’s average rating dynamically:
-[HttpPost("AddRating")]
-        public async Task<IActionResult> AddRating([FromBody] Rating rating)
-        {
-            // Validate rating value
-            if (rating.stars < 1 || rating.stars > 10)
-                return BadRequest("Rating must be between 1 and 10");
+### Key Requirements Implementation
+Our web application implements several core requirements through a combination of frontend and backend components:
 
 
-            // Check if user exists
-            var user = await _context.Users.FindAsync(rating.user_Id);
-            if (user == null)
-                return NotFound("User not found");
+**User Authentication System:**
+- The system uses role-based authentication to differentiate between regular users and administrators
+- Login functionality includes case-insensitive username matching and secure password verification
+- User data is stored in SQLite database with proper validation checks
+
+**Book Management System:**
+- Books are stored with information including title, author, genre, ISBN, publish date, and average rating
+- The database schema supports relationships between books, ratings, and users
+- Images are handled through URL storage for efficient management
+
+**Rating System:**
+- Users can submit ratings (1-5) for books
+- The system automatically calculates and updates average ratings
+- Input validation ensures rating values are within acceptable ranges
+- Each rating is associated with both a user and a book through foreign key relationships
+
+## Give an overview of the pages in your web application.
+
+**Home/Landing Page:**
+- Displays featured books and average ratings
+- Provides navigation to other sections of the application
+
+**Book Listing Page:**
+- Shows all available books with basic information
+- Implements filtering and sorting capabilities
+- Displays average ratings for each book
+
+**Add Rating Page:**
+- Allows users to select a book to rate
+- Shows “hot to cold” spectre for visual rating
+- Numerical rating of 1 to 5
+
+**View Ratings Page:**
+- Allows admins to view existing ratings
+- Possibility to delete ratings if deemed spam/irrelevant
+
+**Login/Register Page:**
+- Allows users to login and non-users to register an account
 
 
-            // Check if book exists
-            var book = await _context.Books.FindAsync(rating.book_id);
-            if (book == null)
-                return NotFound("Book not found");
+## How key features are implemented
 
-
-            // Add the rating to the database
-            _context.Ratings.Add(rating);
-
-
-            await _context.SaveChangesAsync();
-
-
-            // Optionally update the book's average rating
-            var ratingsForBook = _context.Ratings.Where(r => r.book_id == book.book_Id);
-            if (ratingsForBook.Any())
-            {
-                // Recalculate average rating for the book
-                book.averageRating = ratingsForBook.Average(r => r.stars);
-            }
-            else
-            {
-                book.averageRating = 0; // No ratings yet, set default to 0 or another default value
-            }
-
-
-            // Save the updated average rating for the book
-            await _context.SaveChangesAsync();
-
-
-            return Ok($"Rating for '{book.title}' added successfully!");
-        }
-This endpoint ensures data integrity by validating the input and recalculating the average rating of a book after a new rating is added.
-
-3. User Authentication
-This endpoint handles user login and validates credentials
-public IActionResult Login([FromBody] User user)
+**Book Data Retrieval:**
+```csharp
+[HttpGet]
+public async Task<ActionResult<List<Book>>> GetBooks()
 {
-    // Log the incoming request
-    Console.WriteLine($"Received username: {user.username}, password: {user.password}");
+    var books = await _context.Books.ToListAsync();
+    return Ok(books);
+}
+```
 
 
-    // Check if user exists in the database
-    var validatedUser = _context.Users
-    .FirstOrDefault(u => u.username.Trim().ToLower() == user.username.Trim().ToLower() &&
-                         u.password == user.password);
+**Rating Submission:**
+```csharp
+[HttpPost("AddRating")]
+public async Task<IActionResult> AddRating([FromBody] Rating rating)
+{
+    if (rating.stars < 1 || rating.stars > 10)
+        return BadRequest("Rating must be between 1 and 10");
+
+    var book = await _context.Books.FindAsync(rating.book_id);
+    if (book == null)
+        return NotFound("Book not found");
+
+    _context.Ratings.Add(rating);
+    await _context.SaveChangesAsync();
+}
+```
 
 
-
-
-    if (validatedUser != null)
+**User Authentication:**
+*Login task*
+```csharp
+  [HttpPost("login")]
+    public async Task<ActionResult> Login([FromBody] LoginDTO loginDTO)
     {
-        // Successfully authenticated
-        return Ok(new { message = "Login successful" });
+        try
+        {
+            User user = await authService.UserValidation(loginDTO.username, loginDTO.password);
+            string token = GenerateJwt(user);
+
+
+            return Ok(token);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
     }
-    else
+```
+*User validation to DB*
+```csharp
+{
+users = context.Users.ToList();
+}
+
+
+private readonly IList<User> users;
+
+
+
+
+public Task<User> UserValidation(string username, string password)
+{
+    User? existingUser = users.FirstOrDefault(u =>
+   
+    u.username.Equals(username,StringComparison.OrdinalIgnoreCase)) ?? throw new Exception("User does not exist");
+
+
+        if (!existingUser.password.Equals(password))
+        {
+            throw new Exception ("Password was incorrect");
+        }
+
+
+    return Task.FromResult(existingUser);
+}
+```   
+
+**authService.UserValidation:** Validates the user credentials by checking against stored users.<br>
+**GenerateJwt(user):** Generates a JWT (JSON Web Token) for the authenticated user.<br><br>
+If validation is successful, the method returns Ok(token), sending the token to the client.
+If an exception is thrown (e.g., user not found, incorrect password), it returns a BadRequest with the error message.
+
+
+## Describe how your frontend connects to your web service. Provide Code Examples.
+
+**Backend launch settings:**
+```json
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:5140",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "https": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:7167",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
+```
+
+
+**HTTP Profile:**<br>
+Runs on http://localhost:5140 without launching a browser.<br>
+**HTTPS Profile:**<br>
+Runs on https://localhost:7167 with browser launch enabled.<br><br>
+*The backend uses the HTTPS endpoint (https://localhost:7167) as the primary URL for serving API requests during development.*
+
+**Frontend:**
+API calls to backend 
+
+home.cs fetching data from API:
+```csharp
+  private List<Book> Books = new List<Book>();
+    protected override async Task OnInitializedAsync()
     {
-        // Log the error for invalid credentials
-        Console.WriteLine($"Invalid credentials for username: {user.username}");
-
-
-        // Invalid credentials
-        return Unauthorized(new { message = "Invalid username or password" });
+        try
+        {
+            // Replace with your actual API endpoint URL for fetching books.
+            Books = await Http.GetFromJsonAsync<List<Book>>("https://localhost:7167/api/books");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error fetching books: {ex.Message}");
+        }
     }
-This endpoint provides basic authentication functionality by checking the user's credentials against the database.
+```
 
-Give an overview of your web API endpoints.
-The web API includes the following endpoints:
+An API call is made to the endpoint https://localhost:7167/api/books using Http.GetFromJsonAsync<List<Book>>. <br>
+The response is deserialized into a list of Book objects and stored in the Books variable.
 
-Books Management
 
-GET /api/books - Retrieves all books from the database.
-POST /api/books - Allows admins to add a new book (not shown in the example).
-DELETE /api/books/{id} - Allows admins to delete a specific book.
-Ratings Management
+Program.cs (WEBAPP) -- Adding http
+```csharp
+builder.Services.AddHttpClient("WebAPI", client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7167");  
+});
 
-POST /api/ratings/AddRating - Enables users to submit a rating for a book and updates the book's average rating.
-User Authentication
+builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7167") });
+```
 
-POST /api/users/Login - Authenticates a user and returns a success or failure message.
+The frontend (web application) adds an HTTP Client for making API calls to the backend:
+- The base address for the HTTP client is set to https://localhost:7167 (the backend's HTTPS URL).
+- This is done using the AddHttpClient service in Program.cs, which ensures the frontend knows where to send request
 
-Describe how you are currently using file storage to store data. Provide code examples.
+### Flow: 
+**Frontend:**
+A Blazor WebAssembly or Razor component (e.g., Home.cs) initializes and needs to fetch data.
+It makes an HTTP GET request to the backend API (e.g., https://localhost:7167/api/books).
+
+**Backend:**
+The backend listens for API calls on the configured https://localhost:7167 endpoint.
+When a request comes in, the backend processes it and sends a JSON response.
