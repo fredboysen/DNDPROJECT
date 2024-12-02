@@ -1,90 +1,152 @@
+# 4 User Management
+## Describe what users exist in your system and how you have implemented log-in functionality. Provide code examples.
 
-#4 User Management:
+The system can support different user types, such as:
+- **Regular Users:** set as default at sign up
+- **Admins:** Users with administrative rights to manage resources, users, or policies. (must be manually added to the database)
 
-1. User Types in the System
-Our system supports two types of users:
-Normal Users: Can perform actions such as rating books, leaving comments, and viewing ratings and comments from other users.
-Admins: Have additional privileges, including the ability to:
-Remove ratings and comments.
-Add new books to the platform.
-Remove books that violate guidelines or are no longer relevant.
-This differentiation is achieved by assigning roles to users during their registration. The role is stored in the database and used to control access to features in SQLlite.
+### Login Functionality Implementation
+The login functionality is implemented using JWT-based authentication, where the user provides credentials and receives a token if they are valid. Below is a typical implementation:<br><br>
+**Example of Login Endpoint:**
+```csharp
+[ApiController]
+[Route("[controller]")]
 
-2. User Model Implementation
-The Users table in the database is defined to include a role column, which specifies whether a user is a regular user or an admin. The table structure is created using the following migration:
 
-migrationBuilder.CreateTable(
-    name: "Users",
-    columns: table => new
+public class AuthController : ControllerBase
+{
+    private readonly IConfiguration config;
+    private readonly IAuthService authService;
+private readonly ApplicationDB _context;
+
+
+    public AuthController(IConfiguration config, IAuthService authService, ApplicationDB context)
     {
-        user_id = table.Column<int>(type: "INTEGER", nullable: false)
-            .Annotation("Sqlite:Autoincrement", true),
-        username = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-        password = table.Column<string>(type: "TEXT", nullable: false),
-        email = table.Column<string>(type: "TEXT", nullable: false),
-        role = table.Column<string>(type: "TEXT", nullable: false) // Defines user roles
+        this.config = config;
+        this.authService = authService;
+        _context = context;
     }
-);
 
-By including the role column, the system can differentiate between regular users and admins, enabling the platform to grant or restrict access to specific resources and functionalities.
 
-3. Login Functionality
-The login functionality is implemented in the AuthService and provides:
-Case-insensitive username matching: Ensures usernames are matched without being case-sensitive.
-Password verification: Compares input passwords with stored passwords securely.
-Exception handling for invalid credentials: Provides meaningful error messages for incorrect usernames or passwords.
+    [HttpPost("login")]
+    public async Task<ActionResult> Login([FromBody] LoginDTO loginDTO)
+    {
+        try
+        {
+            User user = await authService.UserValidation(loginDTO.username, loginDTO.password);
+            string token = GenerateJwt(user);
 
-public Task<User> UserLogin(string username, string password)
+
+            return Ok(token);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
+
+```
+Authentication Logic in AuthService:
+```csharp
+public class AuthService : IAuthService
+{
+    public AuthService(ApplicationDB context)
+{
+users = context.Users.ToList();
+}
+
+private readonly IList<User> users;
+
+public Task<User> UserValidation(string username, string password)
 {
     User? existingUser = users.FirstOrDefault(u =>
-        u.username.Equals(username, StringComparison.OrdinalIgnoreCase)) 
-        ?? throw new Exception("User does not exist");
+    u.username.Equals(username,StringComparison.OrdinalIgnoreCase)) ?? throw new Exception("User does not exist");
 
-    if (!existingUser.password.Equals(password))
-    {
-        throw new Exception("Password was incorrect");
-    }
+        if (!existingUser.password.Equals(password))
+        {
+            throw new Exception ("Password was incorrect");
+        }
 
     return Task.FromResult(existingUser);
 }
 
-This implementation ensures secure and user-friendly authentication by verifying credentials against the database.
+```
 
-4. Registration Validation
-To ensure data integrity during user registration, input validation is implemented. For example, empty usernames are not allowed, and additional checks ensure that passwords and other fields meet requirements.
-
-public Task UserRegistration(User user)
+Token generation:
+```csharp
+private string GenerateJwt(User user)
 {
-    if (string.IsNullOrEmpty(user.username))
-    {
-        throw new ValidationException("Username must be filled");
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var key = Encoding.ASCII.GetBytes(config["Jwt:Key"] ?? "");
+
+
+        List<Claim> claims = GenerateClaims(user);
+
+
+        var tokenDescriptor = new SecurityTokenDescriptor
+        {
+            Subject = new ClaimsIdentity(claims),
+            Expires = DateTime.UtcNow.AddHours(1),
+            SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
+            Issuer = config["Jwt:Issuer"],
+            Audience = config["Jwt:Audience"]
+        };
+
+
+        var token = tokenHandler.CreateToken(tokenDescriptor);
+        return tokenHandler.WriteToken(token);
     }
-    // Additional validations for other fields can be added here
+```
+
+
+
+Access to Resources
+Access to resources is managed using role-based authorization. Each user is assigned a role (e.g., "Admin", "User"), and their role determines which actions or resources they can access.
+Policies define access rules for specific actions or resources:
+
+```csharp
+public static class AuthorizationPolicies
+    {
+        public static void AddPolicies(IServiceCollection services)
+        {
+            services.AddAuthorizationCore(options =>
+            {
+                options.AddPolicy("User", a =>
+                    a.RequireAuthenticatedUser().RequireClaim(ClaimTypes.Role, "User"));
+                options.AddPolicy("Admin", a =>
+                    a.RequireAuthenticatedUser().RequireClaim(ClaimTypes.Role, "Admin"));
+            });
+        }
+    }
 }
 
-This validation layer prevents incomplete or invalid data from being added to the database.
+```
 
-5. Role-Based Access Control
-Access to resources is managed based on user roles. The role field in the Users table allows us to determine the appropriate permissions for each user. For example:
-Regular User Access:
-Regular users can rate books, view comments, and leave their own comments. These operations are unrestricted for users with the role User.
-Admin Access:
-Admin-specific functionalities such as removing books, ratings, or comments are restricted to users with the Admin role. This is implemented by checking the user’s role in the relevant API endpoints:
-
-[Authorize(Roles = "Admin")]
-[HttpPost("AddBook")]
-public async Task<IActionResult> AddBook([FromBody] Book book)
+### Code Example of Token Validation Middleware
+Tokens are validated automatically by the middleware, using the AddAuthentication and AddJwtBearer configuration in Program.cs:
+```csharp
+builder.Services.AddAuthentication(options =>
 {
-    _context.Books.Add(book);
-    await _context.SaveChangesAsync();
-    return Ok($"Book '{book.title}' added successfully!");
-}
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"] ?? "")),
+        ClockSkew = TimeSpan.Zero,
+    };
+});
 
-By using role-based authorization, the system ensures only authorized users can access admin-level features.
-
-6. Conclusion
-our implemented authentication system includes:
-User Role Management: Differentiates between regular users and admins to control access to features.
-Secure Login Verification: Verifies credentials securely with case-insensitive matching and error handling.
-Input Validation: Ensures integrity and completeness of user data during registration.
-Separation of Concerns: All authentication and user-related logic is encapsulated in the AuthService, ensuring maintainable and modular code.
+```
+### Summary
+Users exist in the system with roles like "User" or "Admin."
+Login functionality is implemented through an AuthController that authenticates users and generates JWT tokens.
+Access to resources is managed using role-based policies, enforced through attributes like <br>[Authorize(Policy = "RoleName")].
