@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using BookTradingHub.Database.Data; 
 using BookTradingHub.WebAPI.Models;
 using Microsoft.IdentityModel.Tokens;

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj": {}
+    "C:\\Users\\frebo\\testing\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj": {
+    "C:\\Users\\frebo\\testing\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\frebo\\testing\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj",
         "projectName": "BookTradingHub.WebAPI",
-        "projectPath": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj",
+        "projectPath": "C:\\Users\\frebo\\testing\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj",
         "packagesPath": "C:\\Users\\frebo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\frebo\\testing\\DNDPROJECT\\BookTradingHub.WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\frebo\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -44,10 +44,6 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
-            "BCrypt.Net-Next": {
-              "target": "Package",
-              "version": "[4.0.3, )"
-            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -116,14 +112,14 @@
         }
       }
     },
-    "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj": {
+    "C:\\Users\\frebo\\testing\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj",
+        "projectUniqueName": "C:\\Users\\frebo\\testing\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj",
         "projectName": "BookTradingHub.WebApp",
-        "projectPath": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj",
+        "projectPath": "C:\\Users\\frebo\\testing\\DNDPROJECT\\BookTradingHub.WebApp\\BookTradingHub.WebApp.csproj",
         "packagesPath": "C:\\Users\\frebo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebApp\\obj\\",
+        "outputPath": "C:\\Users\\frebo\\testing\\DNDPROJECT\\BookTradingHub.WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\frebo\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -138,8 +134,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj": {
-                "projectPath": "C:\\Users\\frebo\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj"
+              "C:\\Users\\frebo\\testing\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj": {
+                "projectPath": "C:\\Users\\frebo\\testing\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj"
               }
             }
           }

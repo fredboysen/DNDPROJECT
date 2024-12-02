@@ -1,10 +1,6 @@
 {
   "Version": 1,
-<<<<<<< HEAD
-  "Hash": "ZU3Zy4g2Ef5r/9q2IDN8JSHMjksgH62XaY+i5CCrxkw=",
-=======
   "Hash": "mhQzgoKHVde7Qox/3APvuBZqeuqHDNk1YSS8FSRrQ6M=",
->>>>>>> e9cfd8a8a6d4ed9111ce9959ffbeb2c90002bc28
   "Source": "BookTradingHub.WebApp",
   "BasePath": "_content/BookTradingHub.WebApp",
   "Mode": "Default",
