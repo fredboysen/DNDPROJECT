@@ -18,7 +18,7 @@ Thomas Schelde (316966) -> https://github.com/Zoichk
 
 - [X] **[Blog 4 - User Management](https://github.com/fredboysen/DNDPROJECT/blob/main/Blog%234.md)**
 
-- [ ] **[Blog 5 - Data Access]()**
+- [X] **[Blog 5 - Data Access](https://github.com/fredboysen/DNDPROJECT/blob/main/Blog%235.md)**
 
-- [ ] **[Blog 6 - Project Conclusion & Demonstration]()**
+- [X] **[Blog 6 - Project Conclusion & Demonstration](https://github.com/fredboysen/DNDPROJECT/blob/main/Blog%236.md)**
 
