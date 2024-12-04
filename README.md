@@ -22,3 +22,43 @@ Thomas Schelde (316966) -> https://github.com/Zoichk
 
 - [X] **[Blog 6 - Project Conclusion & Demonstration](https://github.com/fredboysen/DNDPROJECT/blob/main/Blog%236.md)**
 
+
+## Required install to run / process
+1. Download SQLite
+2. Ensure you have the latest .NET version (9.0 as of writing)
+```
+dotnet --version
+```
+3. Download entity framework packages
+```
+dotnet tool install --global dotnet-ef
+```
+4. Restore packages
+```
+dotnet restore
+```
+6. Create database in SQlite (You can use DB Browser (SQLite) to create db on local)
+7. Update appsettings.json in BookTradingHub.WebAPI
+8. Update database to add tables
+```
+dotnet ef database update
+```
+10. Run API on https
+```
+dotnet run --launch-profile https
+```
+10. Run WebApp
+```
+dotnet run
+```
+
+## User passwords for testing
+**Admin**
+  - username: testadmin
+  - password: test123
+
+**Regular user**
+   - username: testuser
+   - password: test123
+
+
