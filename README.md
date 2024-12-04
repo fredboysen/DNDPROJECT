@@ -24,7 +24,7 @@ Thomas Schelde (316966) -> https://github.com/Zoichk
 
 
 ## Required install to run / process
-1. Download SQLite
+1. Download SQLite DB Browser
 2. Ensure you have the latest .NET version (9.0 as of writing)
 ```
 dotnet --version
@@ -38,21 +38,29 @@ dotnet tool install --global dotnet-ef
 dotnet restore
 ```
 6. Create database in SQlite (You can use DB Browser (SQLite) to create db on local)
-7. Update appsettings.json in BookTradingHub.WebAPI
+7. Update appsettings.json in BookTradingHub.WebAPI to reflect your own DB Browser path.
+```csharp
+"ConnectionStrings": {
+    "DefaultConnection": "Data Source=C:\\Users\\jonas\\BookTradingHub.db;"
+```
 8. Update database to add tables
 ```
 dotnet ef database update
+```
+9. Make sure https is trusted
+```
+dotnet dev-certs https --trust
 ```
 10. Run API on https
 ```
 dotnet run --launch-profile https
 ```
-10. Run WebApp
+11. Run WebApp
 ```
 dotnet run
 ```
 
-## User passwords for testing
+## User details for testing
 **Admin** <br>
 `username: testadmin` <br>
 `password: test123`
