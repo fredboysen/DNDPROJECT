@@ -53,12 +53,12 @@ dotnet run
 ```
 
 ## User passwords for testing
-**Admin**
-  - username: testadmin
-  - password: test123
+**Admin** <br>
+`username: testadmin` <br>
+`password: test123`
 
-**Regular user**
-   - username: testuser
-   - password: test123
+**Regular user** <br>
+`username: testuser` <br>
+`password: test123`
 
 
