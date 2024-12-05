@@ -27,3 +27,4 @@ Key development milestones that were finalized include:
 
 ### 5. Rating:
 *As a user, I want to be able to rate books based on a system on the webpage.*
+*As a user, I want to be able to add a book i have read to rate*
