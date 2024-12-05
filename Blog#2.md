@@ -202,19 +202,18 @@ The context class maps the schema to the database, below are the models which ac
 ```csharp
     public class Book
     {
-        [Key] public int  book_Id { get; set; } required
+        [Key] public int  book_Id { get; set; } 
+
+        [Required]
         public string title { get; set; } = "";
         public string author { get; set; } = "";
-        public string isbn { get; set; } = "";
         public string genre { get; set; } = "";
-        public string publisher { get; set; } = "";
-        public DateTime publish_Date { get; set; }
-        public string condition { get; set; } = "";
-        public double averageRating { get; set; } = 0.0;
-
+        public double averageRating { get; set; } = 0.0; 
 
         public string ImageUrl {get; set;} = "";
     }
+}
+
 ```
 
 **Rating:**
@@ -277,11 +276,7 @@ This is done in DBSeeder.cs
                 {
                     title = "Soul",
                     author = "Olivia Wilson",
-                    isbn = "1234567890",
                     genre = "Fiction",
-                    publisher = "Penguin Random House",
-                    publish_Date = new DateTime(2020, 6, 1),
-                    condition = "New",
                     averageRating = 4.5,
                     ImageUrl = "book1.jpg"
                 },
