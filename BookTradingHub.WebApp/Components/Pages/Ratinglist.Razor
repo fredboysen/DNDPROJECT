@@ -88,25 +88,26 @@ protected override async Task OnInitializedAsync()
     }
 
     private async Task DeleteRating(int ratingId)
+{
+    try
     {
-        try
+        var response = await Http.DeleteAsync($"https://localhost:7167/api/Rating/DeleteRating/{ratingId}");
+        if (response.IsSuccessStatusCode)
         {
-            var response = await Http.DeleteAsync($"https://localhost:7167/api/Rating/DeleteRating/{ratingId}");
-            if (response.IsSuccessStatusCode)
-            {
-                // Remove the deleted rating from the list without reloading
-                ratings = ratings.Where(r => r.rating_id != ratingId).ToList();
-            }
-            else
-            {
-                Console.WriteLine("Error deleting rating.");
-            }
+            ratings = ratings.Where(r => r.rating_id != ratingId).ToList();
+
+            await GetRatings();
         }
-        catch (Exception ex)
+        else
         {
-            Console.WriteLine($"Error deleting rating: {ex.Message}");
+            Console.WriteLine("Error deleting rating.");
         }
     }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error deleting rating: {ex.Message}");
+    }
+}
 
     private async Task<ClaimsPrincipal> GetCurrentUserAsync()
     {

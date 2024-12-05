@@ -34,18 +34,37 @@
             </div>
         }
 
+        @if (isAdmin)
+{
+    <div class="nav-item px-3">
+        <NavLink class="nav-link" href="/bookslist">
+            <span class="bi bi-bookmark-check-nav-menu" aria-hidden="true"></span> Manage Books
+        </NavLink>
+    </div>
+}
+
+
+   @if (isLoggedIn)
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="/addbook">
+                    <span class="bi bi-plus-circle-nav-menu" aria-hidden="true"></span> Add Book
+                </NavLink>
+            </div>
+        }
+
         <div class="nav-item px-3">
             @if (isLoggedIn)
             {
                 <button class="nav-link btn btn-link" @onclick="Logout">
                     <span class="bi bi-person-circle-nav-menu" aria-hidden="true"></span> Sign Out
-                </button> /* If logged in, change button to sign out */ 
+                </button> 
             }
             else
             {
                 <NavLink class="nav-link" href="/login">
                     <span class="bi bi-person-circle-nav-menu" aria-hidden="true"></span> Login
-                </NavLink> /* If logged in, change button to Login */ 
+                </NavLink>  
             }
         </div>
     </nav>

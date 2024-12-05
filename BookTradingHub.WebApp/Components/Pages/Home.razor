@@ -24,11 +24,7 @@
     <div class="book-details">
         <h3 class="book-title">@book.title</h3>
         <p class="book-author">Author: @book.author</p>
-        <p class="book-isbn">ISBN: @book.isbn</p>
         <p class="book-genre">Genre: @book.genre</p>
-        <p class="book-publisher">Publisher: @book.publisher</p>
-        <p class="book-publish-date">Published: @book.publish_Date.ToShortDateString()</p>
-        <p class="book-condition">Condition: @book.condition</p>
         <p class="@GetRatingClass(book.averageRating)">Rating: @book.averageRating</p>
     </div>
 </NavLink>
@@ -56,11 +52,7 @@
         public int book_Id { get; set; }
         public string title { get; set; } = "";
         public string author { get; set; } = "";
-        public string isbn { get; set; }  = "";
         public string genre { get; set; } = "";
-        public string publisher { get; set; } = "";
-        public DateTime publish_Date { get; set; } 
-        public string condition { get; set; } = "";
         public double averageRating { get; set; }
         public string ImageUrl { get; set; } = "";
     }

@@ -45,7 +45,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseAuthorization();
-
+app.UseStaticFiles();
 app.UseHttpsRedirection();
 app.UseStaticFiles(); 
 app.UseAntiforgery();

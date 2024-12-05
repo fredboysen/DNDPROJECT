@@ -86,6 +86,7 @@ app.UseCors(x => x
     .SetIsOriginAllowed(origin => true) 
     .AllowCredentials());
 
+app.UseStaticFiles();
 // Seed database
 using (var scope = app.Services.CreateScope())
 {

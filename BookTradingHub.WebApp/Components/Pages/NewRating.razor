@@ -50,7 +50,7 @@
 }
 
 @code {
-    [Parameter] public int bookId { get; set; }  // Capture the bookId from the URL
+    [Parameter] public int bookId { get; set; }  
     
     private List<Book> Books = new();
     private Rating rating = new();
@@ -60,11 +60,10 @@
     {
         try
         {
-            // Fetch books from the API
+            
             Books = await Http.GetFromJsonAsync<List<Book>>("https://localhost:7167/api/books");
 
-            // Pre-select the book based on the bookId from the URL
-            rating.book_Id = bookId;  // Set the bookId to the rating model
+            rating.book_Id = bookId;  
         }
         catch (Exception ex)
         {
@@ -76,14 +75,12 @@
     {
         Message = string.Empty;
 
-        // Basic validation
         if (rating.book_Id == 0 || rating.stars < 1 || rating.stars > 5 || string.IsNullOrWhiteSpace(rating.review))
         {
             Message = "All fields are required, and rating must be between 1 and 5.";
             return;
         }
 
-        // Post the rating to the API
         var response = await Http.PostAsJsonAsync("https://localhost:7167/api/Rating/AddRating", rating);
         if (response.IsSuccessStatusCode)
         {

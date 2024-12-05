@@ -1,0 +1,99 @@
+@page "/addbook"
+@inject HttpClient Http
+@inject NavigationManager Navigation
+
+
+<h3>Add a New Book</h3>
+
+<EditForm Model="@book" OnValidSubmit="HandleSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <InputText id="title" class="form-control" @bind-Value="book.title" />
+    </div>
+    <div class="form-group">
+        <label for="author">Author:</label>
+        <InputText id="author" class="form-control" @bind-Value="book.author" />
+    </div>
+    <div class="form-group">
+        <label for="genre">Genre:</label>
+        <InputText id="genre" class="form-control" @bind-Value="book.genre" />
+    </div>
+    <div class="form-group">
+        <label for="imageFile">Upload Image:</label>
+        <InputFile id="imageFile" class="form-control" OnChange="HandleFileSelected" />
+    </div>
+    <button type="submit" class="btn btn-primary">Add Book</button>
+</EditForm>
+
+@if (!string.IsNullOrEmpty(book.ImageUrl))
+{
+    <div class="form-group">
+        <label>Uploaded Image:</label>
+        <img src="@book.ImageUrl" alt="Book Image" class="img-thumbnail" />
+    </div>
+}
+
+@code {
+    private Book book = new Book();
+    private IBrowserFile selectedImage;
+
+ private async Task HandleFileSelected(InputFileChangeEventArgs e)
+{
+    try
+    {
+        var file = e.File;
+        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+
+        
+        if (!Directory.Exists(filePath))
+        {
+            Directory.CreateDirectory(filePath);
+        }
+
+        var uniqueFileName = $"{Guid.NewGuid()}_{file.Name}";
+        var fullFilePath = Path.Combine(filePath, uniqueFileName);
+
+        
+        using var fileStream = new FileStream(fullFilePath, FileMode.Create);
+        await file.OpenReadStream().CopyToAsync(fileStream);
+
+        
+        book.ImageUrl = $"/images/{uniqueFileName}";
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error uploading image: {ex.Message}");
+    }
+}
+
+    private async Task HandleSubmit()
+    {
+        try
+        {
+            if (string.IsNullOrWhiteSpace(book.ImageUrl))
+            {
+                Console.WriteLine("Image is required. Please upload an image.");
+                return;
+            }
+
+            var response = await Http.PostAsJsonAsync("https://localhost:7167/api/books", book);
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Book added successfully!");
+                book = new Book();
+                Navigation.NavigateTo("/"); 
+            }
+            else
+            {
+                Console.WriteLine("Error adding book.");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+    }
+}

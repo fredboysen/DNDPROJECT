@@ -1,12 +1,11 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace BookTradingHub.WebAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class New : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,11 +18,7 @@ namespace BookTradingHub.WebAPI.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     title = table.Column<string>(type: "TEXT", nullable: false),
                     author = table.Column<string>(type: "TEXT", nullable: false),
-                    isbn = table.Column<string>(type: "TEXT", nullable: false),
                     genre = table.Column<string>(type: "TEXT", nullable: false),
-                    publisher = table.Column<string>(type: "TEXT", nullable: false),
-                    publish_Date = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    condition = table.Column<string>(type: "TEXT", nullable: false),
                     averageRating = table.Column<double>(type: "REAL", nullable: false),
                     ImageUrl = table.Column<string>(type: "TEXT", nullable: false)
                 },

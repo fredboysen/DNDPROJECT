@@ -1,0 +1,105 @@
+@page "/bookslist"
+@using BookTradingHub.WebAPI.Models
+@inject HttpClient Http
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<h3>Books List</h3>
+
+@if (isLoading)
+{
+    <p>Loading books...</p>
+}
+else if (books == null || books.Count == 0)
+{
+    <p>No books available.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Publisher</th>
+                @if (isAdmin)
+                {
+                    <th>Actions</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in books)
+            {
+                <tr>
+                    <td>@book.title</td>
+                    <td>@book.author</td>
+                    <td>@book.genre</td>
+                    @if (isAdmin)
+                    {
+                        <td>
+                            <button class="btn btn-danger" @onclick="() => DeleteBook(book.book_Id)">
+                                Delete
+                            </button>
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@code {
+    private List<Book> books = new();
+    private bool isLoading = true;
+    private bool isAdmin = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity != null && user.Identity.IsAuthenticated)
+        {
+            isAdmin = user.IsInRole("admin");
+        }
+
+        await LoadBooks();
+    }
+
+    private async Task LoadBooks()
+    {
+        try
+        {
+            isLoading = true;
+            books = await Http.GetFromJsonAsync<List<Book>>("https://localhost:7167/api/books");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading books: {ex.Message}");
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+   private async Task DeleteBook(int id)
+{
+    try
+    {
+        var response = await Http.DeleteAsync($"https://localhost:7167/api/books/{id}");
+        if (response.IsSuccessStatusCode)
+        {
+            books.RemoveAll(b => b.book_Id == id);
+        }
+        else
+        {
+            Console.WriteLine("Failed to delete book.");
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error deleting book: {ex.Message}");
+    }
+}
+}

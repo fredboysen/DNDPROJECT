@@ -54,22 +54,19 @@ public async Task<IActionResult> AddRating([FromBody] Rating rating)
 
  private async Task UpdateAverageRating(int bookId)
 {
-    
     var ratingsForBook = await _context.Ratings
         .Where(r => r.book_Id == bookId)
         .ToListAsync();  
 
-    
     if (ratingsForBook.Any())
     {
-        
         var average = ratingsForBook.Average(r => r.stars);
-        var roundedAverage = Math.Round(average, 2); 
+        var roundedAverage = Math.Round(average, 2); // Round to 2 decimal places
 
         var book = await _context.Books.FindAsync(bookId);
         if (book != null)
         {
-            book.averageRating = roundedAverage;  
+            book.averageRating = roundedAverage;
             await _context.SaveChangesAsync();
         }
     }
@@ -78,26 +75,30 @@ public async Task<IActionResult> AddRating([FromBody] Rating rating)
         var book = await _context.Books.FindAsync(bookId);
         if (book != null)
         {
-            book.averageRating = 0.0; 
+            book.averageRating = 0.0;
             await _context.SaveChangesAsync();
         }
     }
-}       
+}
 
   [HttpDelete("DeleteRating/{id}")]
-        public async Task<IActionResult> DeleteRating(int id)
-        {
-            var rating = await _context.Ratings.FindAsync(id);
-            if (rating == null)
-            {
-                return NotFound("Rating not found");
-            }
+public async Task<IActionResult> DeleteRating(int id)
+{
+    var rating = await _context.Ratings.FindAsync(id);
+    if (rating == null)
+    {
+        return NotFound("Rating not found");
+    }
 
-            _context.Ratings.Remove(rating);
-            await _context.SaveChangesAsync();
+    _context.Ratings.Remove(rating);
+    await _context.SaveChangesAsync();
 
-            return Ok("Rating deleted successfully");
-        }
+    // Update the average rating for the associated book
+    await UpdateAverageRating(rating.book_Id);
+
+    return Ok("Rating deleted successfully");
+}
+
 
        [HttpGet("GetRatings")]
 public async Task<ActionResult<List<Rating>>> GetRatings()
