@@ -11,7 +11,7 @@ Our web application implements several core requirements through a combination o
 - User data is stored in SQLite database with proper validation checks
 
 **Book Management System:**
-- Books are stored with information including title, author, genre, ISBN, publish date, and average rating
+- Books are stored with information including title, author, genre, and average rating
 - The database schema supports relationships between books, ratings, and users
 - Images are handled through URL storage for efficient management
 
