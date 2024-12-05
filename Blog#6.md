@@ -1,6 +1,6 @@
 # #6 Project Conclusion & Demonstration
 ## Provide a final development update, detailing what has been worked on to finalize the project.
-**[LINK FOR DEMONSTRATION](https://www.youtube.com/watch?v=VYyTBRFUHsQ)**<br><br>
+**[LINK FOR DEMONSTRATION](https://www.youtube.com/watch?v=jPs_RiPWmeA)**<br><br>
 The Book Rating Hub project is complete and fully operational, looking at the requirements. The system has been tested and a video has been made. Throughout the development process, we made sure to follow our requirements, to ensure a user-friendly and feature-rich application as well as to have the program fulfill what we wanted it to
 Key development milestones that were finalized include:
 - Implementation of user registration, login, and authentication with role-based access control.
