@@ -22,5 +22,7 @@ Key development milestones that were finalized include:
 *As a user, I want to view detailed information about a book (e.g., title, author, genre, condition) so I can decide if I want to read and/or rate it.*
 ### 4. Administrator access:
 *As an admin, I want to be able to have access to ratings to keep an overview of the ratings and delete potential spam / irrelevant ratings.*
+*As an admin, I want to be able to delete books added by the users in the community in case of faulty book posts.*
+
 ### 5. Rating:
 *As a user, I want to be able to rate books based on a system on the webpage.*

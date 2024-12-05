@@ -170,6 +170,8 @@ The web API includes the following endpoints:
 
 ### Books 
 **GET /api/books** - retrieves books from the database.<br>
+**POST /api/books** - adds a book to the database.<br>
+**DELETE /api/books** - deletes a book from the database.<br>
 
 ### Rating
 **POST/api/Rating/AddRating** - add a rating for a book<br>
