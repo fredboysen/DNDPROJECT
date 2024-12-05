@@ -184,7 +184,6 @@ home.cs fetching data from API:
     {
         try
         {
-            // Replace with your actual API endpoint URL for fetching books.
             Books = await Http.GetFromJsonAsync<List<Book>>("https://localhost:7167/api/books");
         }
         catch (Exception ex)
