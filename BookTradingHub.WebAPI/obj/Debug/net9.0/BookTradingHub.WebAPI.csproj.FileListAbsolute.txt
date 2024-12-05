@@ -345,7 +345,6 @@ C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJEC
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebAPI\bin\Debug\net9.0\BookTradingHub.WebAPI.pdb
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebAPI\bin\Debug\net9.0\Azure.Core.dll
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebAPI\bin\Debug\net9.0\Azure.Identity.dll
-C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebAPI\bin\Debug\net9.0\BCrypt.Net-Next.dll
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebAPI\bin\Debug\net9.0\Humanizer.dll
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebAPI\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\jonas\OneDrive\Skrivebord\Global Business Engineering\PROJECT\DNDPROJECT\BookTradingHub.WebAPI\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll

@@ -5231,19 +5231,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\frebo\\.nuget\\packages\\": {}
+    "C:\\Users\\jonas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\frebo\\testing\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\PROJECT\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj",
       "projectName": "BookTradingHub.WebAPI",
-      "projectPath": "C:\\Users\\frebo\\testing\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj",
-      "packagesPath": "C:\\Users\\frebo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\frebo\\testing\\DNDPROJECT\\BookTradingHub.WebAPI\\obj\\",
+      "projectPath": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\PROJECT\\DNDPROJECT\\BookTradingHub.WebAPI\\BookTradingHub.WebAPI.csproj",
+      "packagesPath": "C:\\Users\\jonas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jonas\\OneDrive\\Skrivebord\\Global Business Engineering\\PROJECT\\DNDPROJECT\\BookTradingHub.WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\frebo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\jonas\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -5340,13 +5340,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\frebo\\testing\\DNDPROJECT\\BookTradingHub.WebAPI\\obj\\project.nuget.cache : Unexpected character encountered while parsing value: z. Path '', line 0, position 0."
-    }
-  ]
+  }
 }
