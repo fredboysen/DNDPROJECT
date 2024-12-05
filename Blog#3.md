@@ -37,9 +37,17 @@ Our web application implements several core requirements through a combination o
 - Shows “hot to cold” spectre for visual rating
 - Numerical rating of 1 to 5
 
+**Add Book Page:**
+-Allows users to add a book for all to rate
+-Posts a new book to db and set average rating to 0 (until someone rates it)
+
 **View Ratings Page:**
 - Allows admins to view existing ratings
 - Possibility to delete ratings if deemed spam/irrelevant
+
+**Manage Books Page:**
+-Allows admins to delete a book added to the db by a user
+-Overview of all books in the system
 
 **Login/Register Page:**
 - Allows users to login and non-users to register an account
