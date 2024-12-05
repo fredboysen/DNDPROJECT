@@ -35,8 +35,8 @@ Our thought behind this platform was to bridge this gap by enabling a centralize
     - As a user, I want to leave comments on a book to share my thoughts and participate in discussions with other readers.<br><br>
 
 
-7. Admin: Add a Book
-    - As an admin, I want to add new books to the platform so that users can rate and comment on them.<br><br>
+7. Add a Book
+    - As a user, I want to add new books to the platform so that people can rate and comment on them.<br><br>
 
 
 8. Admin: Remove a Book
